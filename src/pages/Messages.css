@@ -1,0 +1,47 @@
+
+.messages-page{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+}
+
+.messages-title{
+  margin-bottom:20px;
+}
+
+.conversation-item{
+  display:flex;
+  align-items:center;
+  padding:12px;
+  border-bottom:1px solid #eee;
+  text-decoration:none;
+  color:black;
+}
+
+.conversation-item:hover{
+  background:#f7f7f7;
+}
+
+.conversation-avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#ddd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:10px;
+}
+
+.conversation-name{
+  font-weight:bold;
+}
+
+.conversation-last-message{
+  font-size:14px;
+  color:#666;
+}
+
+.no-messages{
+  color:#888;
+}

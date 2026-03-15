@@ -1,0 +1,261 @@
+/* =============================================================
+   CTA MODULE — mobile-first
+   ============================================================= */
+
+   .hdCtaWrap *,
+   .hdCtaWrap *::before,
+   .hdCtaWrap *::after {
+     box-sizing: border-box;
+   }
+   
+   .hdCtaWrap {
+     width: 100%;
+     background: #0b1120;
+     padding: 20px 16px 40px;
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+     overflow: visible;        /* was hidden — was clipping the button */
+   }
+   
+   .hdCtaInner {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     gap: 28px;
+   }
+   
+   /* ── IMAGE (top on mobile) ── */
+   .hdCtaRight {
+     order: 1;
+     width: 100%;
+     position: relative;
+     border-radius: 16px;
+     overflow: hidden;
+     display: block;
+     text-decoration: none;
+     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+     transition: transform 0.25s ease, box-shadow 0.25s ease;
+     aspect-ratio: 16 / 9;    /* natural widescreen — shows full poster */
+     flex-shrink: 0;
+   }
+   
+   .hdCtaRight:hover {
+     transform: translateY(-3px) scale(1.01);
+     box-shadow: 0 24px 56px rgba(99, 102, 241, 0.28);
+   }
+   
+   .hdCtaImg {
+     position: absolute;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+     display: block;
+     object-fit: fill;
+     border-radius: 0;
+     margin: 0;
+     padding: 0;
+   }
+   
+   .hdCtaGlow {
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(to top, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+     pointer-events: none;
+     z-index: 1;
+   }
+   
+   /* ── TEXT (below image on mobile) ── */
+   .hdCtaLeft {
+     order: 2;
+     display: flex;
+     flex-direction: column;
+     align-items: center;      /* center everything on mobile */
+     gap: 16px;
+     text-align: center;
+     width: 100%;
+     padding-bottom: 8px;      /* ensure button never clips */
+   }
+   
+   .hdCtaEyebrow {
+     display: inline-block;
+     background: rgba(99, 102, 241, 0.14);
+     color: #a5b4fc;
+     padding: 5px 14px;
+     border-radius: 999px;
+     font-size: 10px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     border: 1px solid rgba(99, 102, 241, 0.3);
+   }
+   
+   .hdCtaHeadline {
+     font-size: 30px;
+     font-weight: 900;
+     line-height: 1.1;
+     letter-spacing: -1px;
+     color: #f8fafc;
+     margin: 0;
+   }
+   
+   .hdCtaAccent {
+     background: linear-gradient(135deg, #818cf8, #c4b5fd);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+   }
+   
+   .hdCtaTagline {
+     font-size: 14px;
+     color: #64748b;
+     line-height: 1.7;
+     margin: 0;
+     max-width: 360px;
+   }
+   
+   .hdCtaPoints {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     align-items: flex-start;  /* left-align bullets even on mobile */
+     width: 100%;
+     max-width: 320px;
+   }
+   
+   .hdCtaPoints li {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 13px;
+     color: #94a3b8;
+     font-weight: 500;
+   }
+   
+   .hdCtaCheck {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 20px;
+     height: 20px;
+     min-width: 20px;
+     background: rgba(16, 185, 129, 0.14);
+     color: #34d399;
+     border-radius: 50%;
+     font-size: 10px;
+     font-weight: 900;
+     border: 1px solid rgba(16, 185, 129, 0.3);
+     flex-shrink: 0;
+   }
+   
+   /* Button — full width on mobile, easy to tap */
+   .hdCtaBtn {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     max-width: 320px;
+     padding: 15px 28px;
+     background: linear-gradient(135deg, #6366f1, #8b5cf6);
+     color: white;
+     text-decoration: none;
+     border-radius: 14px;
+     font-size: 15px;
+     font-weight: 800;
+     box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+     transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+     border: none;
+     cursor: pointer;
+     margin-top: 4px;
+   }
+   
+   .hdCtaBtn:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 12px 32px rgba(99, 102, 241, 0.55);
+     opacity: 0.92;
+   }
+   
+   /* Fallback */
+   .hdCtaFallback {
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(145deg, #1e2d47, #151f32);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 8px;
+   }
+   
+   .hdCtaFallbackText {
+     font-size: 48px;
+     font-weight: 900;
+     letter-spacing: -2px;
+     background: linear-gradient(135deg, #818cf8, #c4b5fd);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+   }
+   
+   .hdCtaFallbackSub {
+     font-size: 12px;
+     color: #475569;
+     font-weight: 600;
+     letter-spacing: 2.5px;
+     text-transform: uppercase;
+   }
+   
+   /* ══════════════════════════
+      TABLET 768px+ — side by side
+      ══════════════════════════ */
+   @media (min-width: 768px) {
+     .hdCtaWrap  { padding: 64px 40px; overflow: hidden; }
+     .hdCtaInner { flex-direction: row; align-items: center; gap: 48px; }
+   
+     .hdCtaLeft {
+       text-align: left;
+       order: 1;
+       flex: 0 0 320px;
+       width: 320px;
+       align-items: flex-start;
+       gap: 18px;
+       padding-bottom: 0;
+     }
+   
+     .hdCtaRight {
+       order: 2;
+       flex: 1 1 0%;
+       width: auto;
+       border-radius: 24px;
+       aspect-ratio: 10 / 4;
+     }
+   
+     .hdCtaPoints  { max-width: none; }
+     .hdCtaTagline { max-width: none; font-size: 14px; }
+     .hdCtaBtn     { width: auto; max-width: none; }
+     .hdCtaHeadline { font-size: 40px; }
+   }
+   
+   @media (min-width: 1024px) {
+     .hdCtaWrap     { padding: 88px 56px; }
+     .hdCtaInner    { gap: 60px; }
+     .hdCtaLeft     { flex: 0 0 380px; width: 380px; }
+     .hdCtaHeadline { font-size: 50px; }
+   }
+   
+   @media (min-width: 1280px) {
+     .hdCtaLeft     { flex: 0 0 420px; width: 420px; }
+     .hdCtaHeadline { font-size: 56px; }
+   }
+   
+   /* Tiny phone */
+   @media (max-width: 360px) {
+     .hdCtaHeadline { font-size: 26px; }
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+     .hdCtaBtn, .hdCtaRight { transition: none; }
+   }

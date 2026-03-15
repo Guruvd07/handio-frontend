@@ -1,0 +1,121 @@
+.services-section{
+    padding:120px 20px;
+    background:#020617;
+    position:relative;
+    overflow:hidden;
+    }
+    
+    /* background lights */
+    
+    .services-section::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,#6366f1,transparent 70%);
+    filter:blur(120px);
+    opacity:.25;
+    top:-200px;
+    left:-200px;
+    }
+    
+    .services-section::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#22c55e,transparent 70%);
+    filter:blur(120px);
+    opacity:.2;
+    bottom:-200px;
+    right:-200px;
+    }
+    
+    .services-container{
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+    position:relative;
+    z-index:2;
+    }
+    
+    /* header */
+    
+    .services-tag{
+    color:#818cf8;
+    font-weight:600;
+    letter-spacing:.08em;
+    }
+    
+    .services-title{
+    font-size:42px;
+    margin-top:10px;
+    margin-bottom:60px;
+    
+    background:linear-gradient(90deg,#fff,#818cf8,#22c55e,#fff);
+    background-size:200%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    
+    animation:gradientMove 6s linear infinite;
+    }
+    
+    /* grid */
+    
+    .services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+    }
+    
+    /* card */
+    
+    .service-card{
+    background:rgba(15,23,42,.8);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:35px 20px;
+    transition:.4s;
+    backdrop-filter:blur(10px);
+    cursor:pointer;
+    }
+    
+    .service-card:hover{
+    transform:translateY(-10px) scale(1.05);
+    border-color:#6366f1;
+    box-shadow:0 20px 40px rgba(99,102,241,.35);
+    }
+    
+    /* icon */
+    
+    .service-icon{
+    font-size:32px;
+    display:block;
+    margin-bottom:12px;
+    animation:iconFloat 3s ease-in-out infinite;
+    }
+    
+    .service-card h3{
+    font-size:18px;
+    color:white;
+    }
+    
+    /* animations */
+    
+    @keyframes gradientMove{
+    
+    0%{background-position:0%}
+    
+    100%{background-position:200%}
+    
+    }
+    
+    @keyframes iconFloat{
+    
+    0%{transform:translateY(0)}
+    
+    50%{transform:translateY(-6px)}
+    
+    100%{transform:translateY(0)}
+    
+    }

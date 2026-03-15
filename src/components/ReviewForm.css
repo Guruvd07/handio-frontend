@@ -1,0 +1,205 @@
+/* ReviewForm.css - Scoped styles for ReviewForm component */
+
+.customer-review-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.customer-review-modal {
+  background-color: var(--bg-primary, #ffffff);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+  animation: customer-review-slideIn 0.3s ease-out;
+}
+
+@keyframes customer-review-slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.customer-review-modal h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary, #1f2937);
+}
+
+.customer-review-modal p {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: var(--text-secondary, #6b7280);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light, #f3f4f6);
+}
+
+.customer-stars {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.customer-star {
+  font-size: 32px;
+  color: var(--text-tertiary, #d1d5db);
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms);
+  line-height: 1;
+}
+
+.customer-star:hover {
+  transform: scale(1.2);
+}
+
+.customer-star.active {
+  color: #fbbf24;
+}
+
+.customer-review-modal textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 20px;
+  background-color: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #1f2937);
+  transition: border-color var(--transition-fast, 150ms);
+}
+
+.customer-review-modal textarea:focus {
+  outline: none;
+  border-color: var(--primary-color, #0052cc);
+  box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+}
+
+.customer-review-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.customer-review-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms);
+}
+
+.customer-review-actions button:first-child {
+  background-color: var(--bg-secondary, #f8fafc);
+  color: var(--text-primary, #1f2937);
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.customer-review-actions button:first-child:hover {
+  background-color: var(--bg-tertiary, #f1f5f9);
+}
+
+.customer-review-actions button:last-child {
+  background-color: var(--primary-color, #0052cc);
+  color: white;
+}
+
+.customer-review-actions button:last-child:hover:not(:disabled) {
+  background-color: var(--primary-dark, #003d99);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.customer-review-actions button:last-child:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .customer-review-modal {
+    --bg-primary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-light: #334155;
+    --border-color: #475569;
+    --bg-secondary: #334155;
+    --bg-tertiary: #475569;
+  }
+
+  .customer-review-modal textarea {
+    background-color: #334155;
+    border-color: #475569;
+    color: #f1f5f9;
+  }
+
+  .customer-review-modal textarea::placeholder {
+    color: #94a3b8;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .customer-review-modal {
+    padding: 20px;
+  }
+
+  .customer-review-modal h2 {
+    font-size: 20px;
+  }
+
+  .customer-star {
+    font-size: 28px;
+  }
+
+  .customer-review-actions {
+    flex-direction: column;
+  }
+
+  .customer-review-actions button {
+    width: 100%;
+  }
+}
+
+/* Focus states for accessibility */
+.customer-review-actions button:focus-visible,
+.customer-star:focus-visible {
+  outline: 2px solid var(--primary-color, #0052cc);
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  .customer-star.active {
+    color: #000;
+    text-shadow: 0 0 2px gold;
+  }
+
+  .customer-review-actions button {
+    border: 2px solid currentColor;
+  }
+}

@@ -1,0 +1,307 @@
+/* =============================================================
+   FOOTER — footer.module.css
+   All classes prefixed ft → zero global conflict
+   Mobile-first · Dark luxury · Matches app theme
+   Global leaks removed:
+     - @keyframes fadeInUp  (renamed ftFadeUp)
+     - @media prefers-color-scheme (global theme override)
+     - No global * or body rules
+   ============================================================= */
+
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+   /* Scoped reset */
+   .ftFooter *,
+   .ftFooter *::before,
+   .ftFooter *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   
+   /* ── Footer shell ── */
+   .ftFooter {
+     position: relative;
+     background: linear-gradient(180deg, #0a0718 0%, #030014 100%);
+     color: white;
+     font-family: 'Inter', -apple-system, sans-serif;
+     padding: 48px 0 24px;
+     overflow: hidden;
+     border-top: 1px solid rgba(139, 92, 246, 0.2);
+   }
+   
+   /* Animated top rule */
+   .ftFooter::before {
+     content: '';
+     position: absolute;
+     top: 0; left: 0; right: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, #8b5cf6, #ec4899, transparent);
+     animation: ftBorderPulse 3s infinite;
+   }
+   
+   /* Ambient glows */
+   .ftBgGlow {
+     position: absolute;
+     inset: 0;
+     background:
+       radial-gradient(circle at 25% 50%, rgba(139,92,246,0.09) 0%, transparent 55%),
+       radial-gradient(circle at 75% 50%, rgba(236,72,153,0.08) 0%, transparent 55%);
+     pointer-events: none;
+   }
+   
+   /* Inner container */
+   .ftContainer {
+     max-width: 1280px;
+     margin: 0 auto;
+     padding: 0 20px;
+     position: relative;
+     z-index: 2;
+   }
+   
+   /* ══════════════════════════════
+      MAIN GRID — brand + links
+      ══════════════════════════════ */
+   .ftMain {
+     display: grid;
+     grid-template-columns: 1fr;   /* mobile: stacked */
+     gap: 36px;
+     margin-bottom: 36px;
+   }
+   
+   /* ── Brand column ── */
+   .ftBrand {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     gap: 0;
+   }
+   
+   .ftBrandDesc {
+     margin: 18px 0 22px;
+     color: #6b7280;
+     font-size: 14px;
+     line-height: 1.65;
+     max-width: 340px;
+   }
+   
+   /* Social icons */
+   .ftSocials {
+     display: flex;
+     gap: 10px;
+     justify-content: center;
+   }
+   
+   .ftSocial {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 38px;
+     height: 38px;
+     border-radius: 50%;
+     background: rgba(255,255,255,0.03);
+     border: 1px solid rgba(255,255,255,0.1);
+     color: #c4b5fd;
+     text-decoration: none;
+     transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+     flex-shrink: 0;
+   }
+   
+   .ftSocial:hover {
+     background: linear-gradient(135deg, #8b5cf6, #6366f1);
+     color: white;
+     transform: translateY(-3px);
+     border-color: transparent;
+     box-shadow: 0 8px 18px -4px rgba(139,92,246,0.45);
+   }
+   
+   .ftSocial:active { transform: translateY(0); }
+   
+   /* ── Links grid ── */
+   .ftLinksGrid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);   /* 2-col on mobile */
+     gap: 28px 20px;
+   }
+   
+   .ftCol {
+     display: flex;
+     flex-direction: column;
+     animation: ftFadeUp 0.5s ease forwards;
+     opacity: 0;
+   }
+   
+   .ftCol:nth-child(1) { animation-delay: 0.08s; }
+   .ftCol:nth-child(2) { animation-delay: 0.16s; }
+   .ftCol:nth-child(3) { animation-delay: 0.24s; }
+   .ftCol:nth-child(4) { animation-delay: 0.32s; }
+   .ftCol:nth-child(5) { animation-delay: 0.40s; }
+   
+   .ftColTitle {
+     color: white;
+     font-size: 14px;
+     font-weight: 600;
+     margin-bottom: 14px;
+     letter-spacing: 0.4px;
+     position: relative;
+     display: inline-block;
+   }
+   
+   /* Animated underline accent */
+   .ftColTitle::after {
+     content: '';
+     position: absolute;
+     bottom: -4px;
+     left: 0;
+     width: 28px;
+     height: 2px;
+     background: linear-gradient(90deg, #8b5cf6, #ec4899);
+     border-radius: 2px;
+     transition: width 0.3s ease;
+   }
+   
+   .ftCol:hover .ftColTitle::after { width: 46px; }
+   
+   .ftColList {
+     list-style: none;
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+   }
+   
+   .ftLink {
+     color: #6b7280;
+     text-decoration: none;
+     font-size: 13px;
+     line-height: 1.5;
+     display: inline-block;
+     position: relative;
+     transition: color 0.2s ease, transform 0.2s ease;
+   }
+   
+   /* Arrow that slides in on hover */
+   .ftLink::before {
+     content: '›';
+     position: absolute;
+     left: -14px;
+     color: #8b5cf6;
+     opacity: 0;
+     transition: opacity 0.2s ease, left 0.2s ease;
+   }
+   
+   .ftLink:hover {
+     color: white;
+     transform: translateX(14px);
+   }
+   
+   .ftLink:hover::before {
+     opacity: 1;
+     left: -4px;
+   }
+   
+   /* ══════════════════════════════
+      BOTTOM BAR
+      ══════════════════════════════ */
+   .ftBottom {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 12px;
+     padding-top: 24px;
+     border-top: 1px solid rgba(255,255,255,0.07);
+     text-align: center;
+   }
+   
+   .ftCopy {
+     color: #475569;
+     font-size: 13px;
+   }
+   
+   .ftLegal {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+   }
+   
+   .ftLegalLink {
+     color: #6b7280;
+     text-decoration: none;
+     font-size: 13px;
+     transition: color 0.2s ease;
+   }
+   
+   .ftLegalLink:hover { color: #8b5cf6; }
+   
+   .ftSep {
+     color: #2d3748;
+     font-size: 13px;
+   }
+   
+   /* ══════════════════════════════
+      KEYFRAMES (ft- prefixed)
+      ══════════════════════════════ */
+   @keyframes ftBorderPulse {
+     0%, 100% { opacity: 0.4; }
+     50%       { opacity: 1;   }
+   }
+   
+   @keyframes ftFadeUp {
+     from { opacity: 0; transform: translateY(16px); }
+     to   { opacity: 1; transform: translateY(0);    }
+   }
+   
+   /* ══════════════════════════════
+      640px — slightly larger text
+      ══════════════════════════════ */
+   @media (min-width: 640px) {
+     .ftContainer    { padding: 0 28px; }
+     .ftBrandDesc    { font-size: 15px; }
+     .ftLink         { font-size: 14px; }
+     .ftColTitle     { font-size: 15px; }
+   }
+   
+   /* ══════════════════════════════
+      768px — brand left, links right
+      ══════════════════════════════ */
+   @media (min-width: 768px) {
+     .ftFooter       { padding: 64px 0 32px; }
+     .ftContainer    { padding: 0 36px; }
+     .ftMain         { grid-template-columns: 1.1fr 2fr; gap: 56px; }
+     .ftBrand        { align-items: flex-start; text-align: left; }
+     .ftSocials      { justify-content: flex-start; }
+     .ftBrandDesc    { max-width: none; }
+     .ftLinksGrid    { grid-template-columns: repeat(5, 1fr); gap: 20px; }
+     .ftBottom       { flex-direction: row; justify-content: space-between; text-align: left; }
+   }
+   
+   /* ══════════════════════════════
+      1024px — more breathing room
+      ══════════════════════════════ */
+   @media (min-width: 1024px) {
+     .ftFooter       { padding: 80px 0 40px; }
+     .ftContainer    { padding: 0 48px; }
+     .ftMain         { gap: 72px; margin-bottom: 48px; }
+   }
+   
+   /* ══════════════════════════════
+      TOUCH
+      ══════════════════════════════ */
+   @media (hover: none) and (pointer: coarse) {
+     .ftSocial:hover { background: rgba(255,255,255,0.03); color: #c4b5fd; transform: none; border-color: rgba(255,255,255,0.1); box-shadow: none; }
+     .ftLink:hover   { color: #6b7280; transform: none; }
+     .ftLink:hover::before { opacity: 0; }
+     .ftColTitle::after { width: 28px; }
+   }
+   
+   /* ══════════════════════════════
+      REDUCED MOTION
+      ══════════════════════════════ */
+   @media (prefers-reduced-motion: reduce) {
+     .ftFooter::before, .ftCol,
+     .ftSocial, .ftLink, .ftLink::before,
+     .ftColTitle::after { animation: none; transition: none; }
+     .ftLink:hover   { transform: none; }
+     .ftSocial:hover { transform: none; }
+     .ftCol          { opacity: 1; }
+   }

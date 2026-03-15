@@ -1,0 +1,549 @@
+/* ============================================================
+   SEARCH PROVIDERS — CSS MODULE
+   ALL class names are camelCase with sp prefix (e.g. spPage, spCard)
+   This guarantees ZERO collision with any global CSS file.
+   Even if SearchProviders.css is still in the project, none of
+   these names match global selectors like .provider-card etc.
+   ============================================================ */
+
+/* Scoped reset — only affects children of .spPage */
+.spPage *,
+.spPage *::before,
+.spPage *::after {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+.spPage {
+  min-height: 100vh;
+  background: #0b1120;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  padding-top: 72px; /* navbar offset */
+}
+
+.spContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+}
+
+@media (min-width: 640px)  { .spContainer { padding: 36px 24px 64px; } }
+@media (min-width: 1024px) { .spContainer { padding: 44px 32px 72px; } }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.spHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.spBadge {
+  display: inline-block;
+  background: rgba(99,102,241,0.14);
+  color: #a5b4fc;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid rgba(99,102,241,0.28);
+  margin-bottom: 12px;
+}
+
+.spTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px;
+}
+
+@media (min-width: 640px)  { .spTitle { font-size: 36px; } }
+@media (min-width: 1024px) { .spTitle { font-size: 42px; } }
+
+.spSubtitle {
+  font-size: 14px;
+  color: #64748b;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   FILTERS
+   ============================================================ */
+.spFilters {
+  background: #151f32;
+  border: 1px solid #1e2d47;
+  border-radius: 18px;
+  padding: 20px 16px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 640px) { .spFilters { padding: 24px; gap: 20px; } }
+
+.spFiltersGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 520px) { .spFiltersGrid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 768px) { .spFiltersGrid { grid-template-columns: repeat(3,1fr); gap: 16px; } }
+
+.spFilterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spFilterLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.spSelect {
+  width: 100%;
+  padding: 11px 36px 11px 13px;
+  background: #0f172a;
+  border: 1px solid #1e2d47;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #f1f5f9;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%2364748b' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color-scheme: dark;
+}
+
+.spSelect option { background: #151f32; color: #f1f5f9; }
+
+.spSelect:hover  { border-color: #6366f1; }
+.spSelect:focus  {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+.spFilterActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.spSearchBtn {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+  font-family: inherit;
+}
+
+.spSearchBtn:hover:not(:disabled) { opacity: 0.9; }
+.spSearchBtn:active:not(:disabled) { transform: scale(0.98); }
+.spSearchBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.spClearBtn {
+  padding: 12px 18px;
+  background: transparent;
+  border: 1px solid #2d3f5e;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.spClearBtn:hover { border-color: #ef4444; color: #f87171; }
+
+.spBtnLoading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spBtnSpinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spSpin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   RESULTS AREA
+   ============================================================ */
+.spResults {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.spResultsHeader { display: flex; flex-direction: column; gap: 4px; }
+
+.spResultsCount {
+  font-size: 18px;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.spResultsSub { font-size: 13px; color: #475569; margin: 0; }
+
+/* Loading */
+.spLoadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 72px 20px;
+}
+
+.spLoadingSpinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid #1e2d47;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spSpin 0.9s linear infinite;
+}
+
+.spLoadingState p { font-size: 14px; color: #64748b; }
+
+/* Empty */
+.spEmptyState {
+  background: #151f32;
+  border: 1px solid #1e2d47;
+  border-radius: 18px;
+  padding: 56px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.spEmptyIcon { font-size: 48px; opacity: 0.4; }
+
+.spEmptyState h3 { font-size: 18px; font-weight: 800; color: #f1f5f9; margin: 0; }
+.spEmptyState p  { font-size: 13px; color: #64748b; margin: 0; }
+
+.spClearFiltersBtn {
+  margin-top: 4px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  font-family: inherit;
+}
+
+.spClearFiltersBtn:hover  { opacity: 0.9; }
+.spClearFiltersBtn:active { transform: scale(0.97); }
+
+/* ============================================================
+   GRID
+   ============================================================ */
+.spGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 col default on mobile */
+  gap: 14px;
+}
+
+@media (max-width: 420px) {
+  .spGrid { grid-template-columns: 1fr; }  /* single col on tiny phones */
+}
+
+@media (min-width: 768px) {
+  .spGrid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
+
+@media (min-width: 1100px) {
+  .spGrid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+}
+
+/* ============================================================
+   PROVIDER CARD
+   ============================================================ */
+.spCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;   /* block not flex — avoids stretching weirdness */
+}
+
+.spCard {
+  display: flex;
+  flex-direction: column;
+  background: #151f32;
+  border: 1px solid #1e2d47;
+  border-radius: 16px;
+  overflow: hidden;          /* clips the image inside */
+  width: 100%;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.spCardLink:hover .spCard {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+  border-color: #6366f1;
+}
+
+/* ── IMAGE BOX ──
+   CRITICAL: explicit height + overflow hidden + object-fit cover
+   This is what prevents the photo from being cut or over-expanded */
+.spCardImgBox {
+  position: relative;
+  width: 100%;
+  height: 180px;             /* FIXED height — never grows */
+  max-height: 180px;         /* double insurance */
+  overflow: hidden;          /* clip anything outside */
+  flex-shrink: 0;            /* never shrink in flex container */
+  background: #0f172a;
+}
+
+@media (min-width: 640px)  { .spCardImgBox { height: 190px; max-height: 190px; } }
+@media (min-width: 1024px) { .spCardImgBox { height: 200px; max-height: 200px; } }
+
+.spCardImg {
+  /* Fill the box completely, never distort, bias toward face */
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.3s ease;
+}
+
+.spCardLink:hover .spCardImg { transform: scale(1.07); }
+
+/* Verified dot — top right */
+.spVerifiedBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  background: #10b981;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #151f32;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* Category pill — bottom left of image */
+.spCatPill {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 3px 9px;
+  background: rgba(11, 17, 32, 0.82);
+  color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+/* ── CARD BODY ── */
+.spCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  flex: 1;
+}
+
+.spProviderName {
+  font-size: 14px;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 640px) { .spProviderName { font-size: 15px; } }
+
+.spProviderLocation {
+  font-size: 11px;
+  color: #64748b;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Rating + price */
+.spCardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid #1e2d47;
+  border-bottom: 1px solid #1e2d47;
+  gap: 8px;
+}
+
+.spRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.spStars {
+  font-size: 11px;
+  color: #f59e0b;
+  letter-spacing: 0.5px;
+}
+
+.spRatingVal {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.spPrice {
+  font-size: 13px;
+  font-weight: 800;
+  color: #818cf8;
+  white-space: nowrap;
+}
+
+/* Description */
+.spDesc {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  flex: 1;
+}
+
+/* CTA */
+.spViewBtn {
+  margin-top: 4px;
+  padding: 9px 14px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  transition: opacity 0.2s;
+  box-shadow: 0 3px 10px rgba(99,102,241,0.22);
+}
+
+.spCardLink:hover .spViewBtn { opacity: 0.85; }
+
+/* ============================================================
+   KEYFRAMES (all sp-prefixed)
+   ============================================================ */
+@keyframes spSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   SMALL PHONE  (< 400px)
+   ============================================================ */
+@media (max-width: 400px) {
+  .spPage     { padding-top: 60px; }
+  .spTitle    { font-size: 22px; }
+  .spGrid     { grid-template-columns: 1fr; }
+  .spCardImgBox { height: 200px; max-height: 200px; } /* bigger on single col */
+}
+
+/* ============================================================
+   TOUCH TARGETS
+   ============================================================ */
+@media (hover: none) and (pointer: coarse) {
+  .spSearchBtn,
+  .spClearBtn,
+  .spClearFiltersBtn { min-height: 48px; }
+}
+
+/* ============================================================
+   FOCUS (accessibility)
+   ============================================================ */
+.spSelect:focus-visible,
+.spSearchBtn:focus-visible,
+.spClearBtn:focus-visible,
+.spClearFiltersBtn:focus-visible,
+.spCardLink:focus-visible .spCard {
+  outline: 3px solid #818cf8;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .spPage *, .spPage *::before, .spPage *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

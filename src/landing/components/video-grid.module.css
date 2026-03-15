@@ -1,0 +1,406 @@
+/* =============================================================
+   VIDEO GRID — video-grid.module.css
+   All classes prefixed vg → zero global conflict
+   Mobile-first · Horizontal scroll · Dark luxury
+   ============================================================= */
+
+   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+   /* Scoped reset */
+   .vgSection *,
+   .vgSection *::before,
+   .vgSection *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   
+   /* ── Section ── */
+   .vgSection {
+     position: relative;
+     width: 100%;
+     background: #030014;
+     overflow: hidden;
+     padding: 48px 0 40px;
+     font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+   }
+   
+   /* Animated top rule */
+   .vgSection::before {
+     content: '';
+     position: absolute;
+     top: 0; left: 0; right: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, #8b5cf6, #c084fc, transparent);
+     animation: vgBorderPulse 3s infinite;
+     z-index: 1;
+   }
+   
+   /* Ambient radial glows */
+   .vgBgGlow {
+     position: absolute;
+     inset: 0;
+     background:
+       radial-gradient(circle at 25% 40%, rgba(139,92,246,0.10) 0%, transparent 50%),
+       radial-gradient(circle at 75% 60%, rgba(192,132,252,0.08) 0%, transparent 50%);
+     pointer-events: none;
+     z-index: 0;
+   }
+   
+   .vgContainer {
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 16px;
+     position: relative;
+     z-index: 2;
+   }
+   
+   /* ══════════════════════════
+      HEADER
+      ══════════════════════════ */
+   .vgHeader {
+     text-align: center;
+     margin-bottom: 28px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 12px;
+   }
+   
+   .vgTag {
+     display: inline-block;
+     background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(192,132,252,0.15));
+     border: 1px solid rgba(139,92,246,0.25);
+     padding: 5px 16px;
+     border-radius: 999px;
+     color: #c4b5fd;
+     font-size: 11px;
+     font-weight: 700;
+     letter-spacing: 1.2px;
+     text-transform: uppercase;
+   }
+   
+   .vgTitle {
+     font-size: 28px;
+     font-weight: 900;
+     line-height: 1.15;
+     color: white;
+     letter-spacing: -0.5px;
+   }
+   
+   .vgAccent {
+     background: linear-gradient(135deg, #8b5cf6, #ec4899, #8b5cf6);
+     background-size: 200% auto;
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+     animation: vgGradFlow 3.5s linear infinite;
+   }
+   
+   .vgDesc {
+     font-size: 14px;
+     color: #6b7280;
+     line-height: 1.6;
+     max-width: 400px;
+   }
+   
+   /* ══════════════════════════
+      CONTROLS ROW
+      ══════════════════════════ */
+   .vgControls {
+     display: flex;
+     justify-content: flex-end;
+     gap: 10px;
+     margin-bottom: 16px;
+     padding: 0 4px;
+   }
+   
+   .vgCtrlBtn {
+     width: 44px;
+     height: 44px;
+     border-radius: 50%;
+     background: rgba(255,255,255,0.04);
+     border: 1px solid rgba(255,255,255,0.1);
+     color: white;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+     backdrop-filter: blur(8px);
+     flex-shrink: 0;
+   }
+   
+   .vgCtrlBtn:hover {
+     background: linear-gradient(135deg, #8b5cf6, #c084fc);
+     border-color: transparent;
+     transform: scale(1.08);
+     box-shadow: 0 8px 24px -4px rgba(139,92,246,0.55);
+   }
+   
+   .vgCtrlBtn:active { transform: scale(0.93); }
+   
+   .vgCtrlHidden {
+     opacity: 0;
+     pointer-events: none;
+     transform: scale(0.8);
+   }
+   
+   /* ══════════════════════════
+      SCROLL CONTAINER
+      ══════════════════════════ */
+   .vgScroll {
+     overflow-x: auto;
+     scroll-behavior: smooth;
+     scrollbar-width: none;
+     -ms-overflow-style: none;
+     /* bleed past container padding for edge-to-edge feel */
+     margin: 0 -16px;
+     padding: 0 16px;
+     cursor: grab;
+     -webkit-overflow-scrolling: touch;
+   }
+   
+   .vgScroll:active { cursor: grabbing; }
+   .vgScroll::-webkit-scrollbar { display: none; }
+   
+   /* ── Track ── */
+   .vgTrack {
+     display: flex;
+     gap: 14px;
+     padding: 6px 0 20px;
+     width: fit-content;
+   }
+   
+   /* ══════════════════════════
+      VIDEO FRAME
+      ══════════════════════════ */
+   .vgFrame {
+     flex: 0 0 auto;
+     width: 260px;      /* mobile default — compact */
+     transition: transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
+   }
+   
+   .vgFrame:hover { transform: translateY(-6px); }
+   
+   /* Video box */
+   .vgVideoBox {
+     position: relative;
+     width: 100%;
+     aspect-ratio: 16 / 9;
+     border-radius: 18px;
+     overflow: hidden;
+     background: #100c1f;
+     border: 1px solid rgba(255,255,255,0.08);
+     box-shadow: 0 16px 36px -10px rgba(0,0,0,0.65);
+     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .vgFrame:hover .vgVideoBox {
+     border-color: rgba(139,92,246,0.5);
+     box-shadow: 0 24px 48px -12px rgba(139,92,246,0.45);
+   }
+   
+   .vgVideo {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     transition: transform 0.5s ease;
+   }
+   
+   .vgFrame:hover .vgVideo { transform: scale(1.07); }
+   
+   /* Dark gradient overlay */
+   .vgOverlay {
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6) 100%);
+     pointer-events: none;
+     z-index: 1;
+   }
+   
+   /* Play badge — bottom right */
+   .vgPlayBadge {
+     position: absolute;
+     bottom: 10px;
+     right: 10px;
+     z-index: 2;
+     width: 32px;
+     height: 32px;
+     border-radius: 50%;
+     background: rgba(139,92,246,0.85);
+     backdrop-filter: blur(4px);
+     border: 1px solid rgba(255,255,255,0.2);
+     color: white;
+     font-size: 11px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding-left: 2px; /* optical centering for ▶ */
+     box-shadow: 0 4px 12px rgba(139,92,246,0.5);
+     opacity: 0;
+     transform: scale(0.7);
+     transition: opacity 0.25s ease, transform 0.25s ease;
+   }
+   
+   .vgFrame:hover .vgPlayBadge {
+     opacity: 1;
+     transform: scale(1);
+   }
+   
+   /* Caption */
+   .vgCaption {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     margin-top: 10px;
+     padding: 0 4px;
+     opacity: 0.72;
+     transition: opacity 0.25s ease;
+   }
+   
+   .vgFrame:hover .vgCaption { opacity: 1; }
+   
+   .vgDot {
+     width: 6px;
+     height: 6px;
+     border-radius: 50%;
+     background: #8b5cf6;
+     box-shadow: 0 0 8px #8b5cf6;
+     flex-shrink: 0;
+     animation: vgPulse 2s infinite;
+   }
+   
+   .vgLabel {
+     font-size: 13px;
+     font-weight: 600;
+     background: linear-gradient(135deg, #fff, #c4b5fd);
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+     white-space: nowrap;
+   }
+   
+   /* ══════════════════════════
+      DOT INDICATORS
+      ══════════════════════════ */
+   .vgDots {
+     display: flex;
+     justify-content: center;
+     gap: 6px;
+     margin-top: 20px;
+   }
+   
+   .vgDotInd {
+     width: 7px;
+     height: 7px;
+     border-radius: 50%;
+     background: rgba(255,255,255,0.18);
+     transition: width 0.3s ease, background 0.3s ease, border-radius 0.3s ease;
+   }
+   
+   .vgDotActive {
+     width: 28px;
+     border-radius: 999px;
+     background: linear-gradient(90deg, #8b5cf6, #c084fc);
+   }
+   
+   /* ══════════════════════════
+      KEYFRAMES
+      ══════════════════════════ */
+   @keyframes vgBorderPulse {
+     0%, 100% { opacity: 0.4; }
+     50%       { opacity: 1;   }
+   }
+   
+   @keyframes vgGradFlow {
+     0%   { background-position: 0%   50%; }
+     50%  { background-position: 100% 50%; }
+     100% { background-position: 0%   50%; }
+   }
+   
+   @keyframes vgPulse {
+     0%, 100% { opacity: 0.5; transform: scale(1);   }
+     50%       { opacity: 1;   transform: scale(1.25); }
+   }
+   
+   /* ══════════════════════════
+      RESPONSIVE — mobile-first
+      ══════════════════════════ */
+   
+   /* 360px — extra small */
+   @media (max-width: 360px) {
+     .vgFrame  { width: 220px; }
+     .vgTitle  { font-size: 24px; }
+   }
+   
+   /* 480px */
+   @media (min-width: 480px) {
+     .vgFrame   { width: 300px; }
+     .vgTrack   { gap: 16px; }
+     .vgTitle   { font-size: 32px; }
+   }
+   
+   /* 640px — tablet */
+   @media (min-width: 640px) {
+     .vgSection    { padding: 64px 0 56px; }
+     .vgContainer  { padding: 0 24px; }
+     .vgScroll     { margin: 0 -24px; padding: 0 24px; }
+     .vgFrame      { width: 340px; }
+     .vgHeader     { margin-bottom: 32px; gap: 14px; }
+     .vgTitle      { font-size: 36px; }
+     .vgDesc       { font-size: 15px; }
+     .vgCtrlBtn    { width: 48px; height: 48px; }
+     .vgVideoBox   { border-radius: 22px; }
+     .vgDots       { display: flex; }
+   }
+   
+   /* 900px — small desktop */
+   @media (min-width: 900px) {
+     .vgContainer  { padding: 0 40px; }
+     .vgScroll     { margin: 0 -40px; padding: 0 40px; }
+     .vgFrame      { width: 380px; }
+     .vgTitle      { font-size: 44px; }
+     .vgTrack      { gap: 20px; }
+   }
+   
+   /* 1200px — large desktop */
+   @media (min-width: 1200px) {
+     .vgSection    { padding: 80px 0 72px; }
+     .vgContainer  { padding: 0 56px; }
+     .vgScroll     { margin: 0 -56px; padding: 0 56px; }
+     .vgFrame      { width: 420px; }
+     .vgTitle      { font-size: 52px; }
+     .vgTrack      { gap: 24px; }
+     .vgHeader     { margin-bottom: 40px; }
+   }
+   
+   /* ══════════════════════════
+      TOUCH — disable hover transforms
+      ══════════════════════════ */
+   @media (hover: none) and (pointer: coarse) {
+     .vgFrame:hover           { transform: none; }
+     .vgFrame:hover .vgVideo  { transform: none; }
+     .vgFrame:active          { transform: scale(0.98); }
+     .vgFrame:hover .vgPlayBadge { opacity: 1; transform: scale(1); }
+     .vgVideoBox              { transition: none; }
+   }
+   
+   /* ══════════════════════════
+      REDUCED MOTION
+      ══════════════════════════ */
+   @media (prefers-reduced-motion: reduce) {
+     .vgSection::before,
+     .vgAccent,
+     .vgDot,
+     .vgFrame,
+     .vgVideo,
+     .vgCtrlBtn,
+     .vgDotInd {
+       animation: none;
+       transition: none;
+     }
+     .vgFrame:hover            { transform: none; }
+     .vgFrame:hover .vgVideo   { transform: none; }
+   }

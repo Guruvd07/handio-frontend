@@ -1,0 +1,533 @@
+/* ============================================================
+   UPLOAD PORTFOLIO — CSS MODULE
+   All class names: camelCase with up prefix (upPage, upCard …)
+   Matches Dashboard / Profile / SearchProviders dark scheme.
+   Zero :root variables · Zero global * rules · Zero conflicts.
+   ============================================================ */
+
+/* Scoped reset — only children of .upPage */
+.upPage *,
+.upPage *::before,
+.upPage *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+.upPage {
+  min-height: 100vh;
+  background: #0b1120;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   STICKY HEADER BAR
+   ============================================================ */
+.upHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #0f172a;
+  border-bottom: 1px solid #1e2d47;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  backdrop-filter: blur(8px);
+}
+
+@media (min-width: 640px) {
+  .upHeader { padding: 16px 28px; gap: 18px; }
+}
+
+.upBackBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #151f32;
+  color: #94a3b8;
+  border: 1px solid #1e2d47;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.upBackBtn:hover {
+  border-color: #6366f1;
+  color: #a5b4fc;
+  background: #1e2d47;
+}
+
+.upHeaderTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 640px) { .upHeaderTitle { font-size: 22px; } }
+
+/* ============================================================
+   CONTENT WRAPPER
+   ============================================================ */
+.upContent {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 640px) { .upContent { padding: 36px 24px 64px; } }
+@media (min-width: 1024px) { .upContent { padding: 44px 32px 72px; } }
+
+/* ============================================================
+   UPLOAD CARD
+   ============================================================ */
+.upUploadCard {
+  background: #151f32;
+  border: 1px solid #1e2d47;
+  border-radius: 20px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 640px) { .upUploadCard { padding: 32px 28px; gap: 24px; } }
+
+.upCardHeader { display: flex; flex-direction: column; gap: 4px; }
+
+.upCardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 640px) { .upCardTitle { font-size: 22px; } }
+
+.upCardSubtitle { font-size: 13px; color: #64748b; }
+
+/* ── Drop zone ── */
+.upDropZone { position: relative; }
+
+.upFileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+.upFileLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 36px 20px;
+  border: 2px dashed #2d3f5e;
+  border-radius: 14px;
+  background: #0f172a;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+}
+
+.upFileLabel:hover {
+  border-color: #6366f1;
+  background: rgba(99,102,241,0.06);
+}
+
+.upDropIcon  { font-size: 44px; line-height: 1; }
+.upDropText  { font-size: 15px; font-weight: 700; color: #cbd5e1; }
+.upDropHint  { font-size: 12px; color: #475569; }
+
+/* ── Preview ── */
+.upPreviewWrap { display: flex; }
+
+.upPreviewBox {
+  position: relative;
+  display: inline-block;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #1e2d47;
+  max-width: 280px;
+  width: 100%;
+}
+
+.upPreviewImg {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.upRemoveBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.upRemoveBtn:hover { background: #dc2626; transform: scale(1.1); }
+
+/* ── Alerts ── */
+.upAlert {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upAlertError {
+  background: rgba(239,68,68,0.12);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.25);
+}
+
+.upAlertSuccess {
+  background: rgba(16,185,129,0.12);
+  color: #34d399;
+  border: 1px solid rgba(16,185,129,0.25);
+}
+
+/* ── Caption ── */
+.upCaptionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.upCaptionLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.2px;
+}
+
+.upOptional {
+  font-size: 11px;
+  font-weight: 500;
+  color: #475569;
+  margin-left: 4px;
+}
+
+.upCaptionInput {
+  width: 100%;
+  padding: 12px 14px;
+  background: #0f172a;
+  border: 1px solid #1e2d47;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #f1f5f9;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color-scheme: dark;
+}
+
+.upCaptionInput::placeholder { color: #475569; }
+
+.upCaptionInput:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+.upCharCount {
+  font-size: 11px;
+  color: #475569;
+  text-align: right;
+}
+
+/* ── Actions ── */
+.upActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.upUploadBtn {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.3);
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.upUploadBtn:hover:not(:disabled) { opacity: 0.9; }
+.upUploadBtn:active:not(:disabled) { transform: scale(0.98); }
+.upUploadBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.upCancelBtn {
+  padding: 12px 20px;
+  background: transparent;
+  border: 1px solid #2d3f5e;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.upCancelBtn:hover { border-color: #ef4444; color: #f87171; }
+
+/* Inline button spinner */
+.upBtnLoading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upBtnSpinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: upSpin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   PORTFOLIO SECTION
+   ============================================================ */
+.upPortfolioSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upSectionTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #1e2d47;
+}
+
+@media (min-width: 640px) { .upSectionTitle { font-size: 22px; } }
+
+.upCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 8px;
+  background: rgba(99,102,241,0.18);
+  color: #a5b4fc;
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Empty state */
+.upEmpty {
+  background: #151f32;
+  border: 2px dashed #1e2d47;
+  border-radius: 18px;
+  padding: 56px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upEmptyIcon { font-size: 56px; opacity: 0.4; }
+
+.upEmpty h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #f1f5f9;
+}
+
+.upEmpty p { font-size: 13px; color: #64748b; }
+
+/* ── Portfolio grid ── */
+.upGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 400px) { .upGrid { grid-template-columns: 1fr; } }
+
+@media (min-width: 640px) {
+  .upGrid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+
+@media (min-width: 1024px) {
+  .upGrid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+}
+
+/* ── Portfolio card ── */
+.upPortfolioCard {
+  background: #151f32;
+  border: 1px solid #1e2d47;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.upPortfolioCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.4);
+  border-color: #6366f1;
+}
+
+/* Image box — fixed square aspect, never cut */
+.upImgBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;    /* square grid — full image always shown */
+  overflow: hidden;
+  background: #0f172a;
+  flex-shrink: 0;
+}
+
+.upPortfolioImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.upPortfolioCard:hover .upPortfolioImg { transform: scale(1.06); }
+
+/* Caption */
+.upCardCaption {
+  padding: 10px 12px;
+  border-top: 1px solid #1e2d47;
+  flex: 1;
+}
+
+.upCardCaption p {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Delete button */
+.upDeleteBtn {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(239,68,68,0.08);
+  color: #f87171;
+  border: none;
+  border-top: 1px solid #1e2d47;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+}
+
+.upDeleteBtn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* ============================================================
+   KEYFRAMES (all up-prefixed)
+   ============================================================ */
+@keyframes upSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   TOUCH TARGETS
+   ============================================================ */
+@media (hover: none) and (pointer: coarse) {
+  .upUploadBtn,
+  .upCancelBtn,
+  .upBackBtn { min-height: 48px; }
+}
+
+/* ============================================================
+   FOCUS (accessibility)
+   ============================================================ */
+.upFileLabel:focus-within,
+.upCaptionInput:focus-visible,
+.upUploadBtn:focus-visible,
+.upCancelBtn:focus-visible,
+.upBackBtn:focus-visible,
+.upDeleteBtn:focus-visible {
+  outline: 3px solid #818cf8;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .upPage *, .upPage *::before, .upPage *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
