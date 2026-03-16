@@ -2,7 +2,6 @@ export type Language = 'en' | 'hi' | 'mr' | 'bn' | 'ta' | 'te' | 'kn';
 
 export const translations = {
   en: {
-    // Navbar
     navbar: {
       login: 'Login',
       register: 'Register',
@@ -13,14 +12,14 @@ export const translations = {
       admin: 'Admin',
       logout: 'Logout',
     },
-    
-    // Landing Page
+
     landing: {
       services: 'Services',
       contact: 'Contact',
+      popularServices: 'Popular Services',
+      popularServicesSubtitle: "Choose from our top-rated professional services",
     },
 
-    // Hero Section
     hero: {
       trustedBadge: 'Trusted by 50,000+ homeowners',
       titlePart1: 'Find Trusted Local ',
@@ -33,7 +32,6 @@ export const translations = {
       btnBecomeProvider: 'Become a Provider',
     },
 
-    // How It Works
     howItWorks: {
       badge: '✦ Simple Process ✦',
       title: 'How Handio Works',
@@ -57,7 +55,6 @@ export const translations = {
       footer: 'From booking to completion, we make it effortless',
     },
 
-    // Features Section
     features: {
       title: 'Why Choose Handio',
       feature1: '✔ Verified Providers',
@@ -66,7 +63,6 @@ export const translations = {
       feature4: '✔ Secure Platform',
     },
 
-    // Login Page
     login: {
       title: 'Sign in to your account',
       subtitle: 'Welcome back! Please enter your details',
@@ -76,7 +72,7 @@ export const translations = {
       passwordPlaceholder: 'Enter your password',
       signIn: 'Sign in',
       signingIn: 'Signing in...',
-      noAccount: 'Don\'t have an account?',
+      noAccount: "Don't have an account?",
       createOne: 'Create one',
       rememberMe: 'Remember me',
       forgotPassword: 'Forgot password?',
@@ -90,17 +86,16 @@ export const translations = {
       feature2: '200+ Expert Professionals',
       feature3: '24/7 Customer Support',
       feature4: '100% Satisfaction Guaranteed',
-      testimonial: 'Best home service platform I\'ve ever used. Quick, reliable, and professional!',
+      testimonial: "Best home service platform I've ever used. Quick, reliable, and professional!",
       testimonialAuthor: 'Rahul Sharma',
       testimonialTitle: 'Happy Customer',
       hidePassword: 'Hide password',
       showPassword: 'Show password',
       orContinueWith: 'or continue with',
       google: 'Google',
-      github: 'GitHub'
+      github: 'GitHub',
     },
 
-    // Register Page
     register: {
       title: 'Create an account',
       subtitle: 'Join us and get started in minutes',
@@ -122,8 +117,6 @@ export const translations = {
       creating: 'Creating account...',
       haveAccount: 'Already have an account?',
       signIn: 'Sign in',
-      
-      // Validation messages
       fillAllFields: 'Please fill in all fields',
       passwordMismatch: 'Passwords do not match',
       agreeTerms: 'Please agree to the terms and conditions',
@@ -131,42 +124,30 @@ export const translations = {
       invalidEmail: 'Please enter a valid email address',
       emailExists: 'Email already registered',
       genericError: 'Registration failed. Please try again.',
-      
-      // Password strength
       weak: 'Weak',
       fair: 'Fair',
       good: 'Good',
       strong: 'Strong',
-      
-      // Terms
       termsOfService: 'Terms of Service',
       privacyPolicy: 'Privacy Policy',
       and: 'and',
-      
-      // Hide/Show password
       hidePassword: 'Hide password',
       showPassword: 'Show password',
-      
-      // Brand section - Customer
-      customerDescription: 'Get access to India\'s best home services professionals',
+      customerDescription: "Get access to India's best home services professionals",
       customerFeature1: 'Book trusted professionals',
       customerFeature2: 'Secure payments',
       customerFeature3: '24/7 customer support',
       customerFeature4: 'Satisfaction guaranteed',
-      
-      // Brand section - Provider
       providerDescription: 'Grow your business with thousands of happy customers',
       providerFeature1: 'Reach more customers',
       providerFeature2: 'Flexible working hours',
       providerFeature3: 'Instant payments',
       providerFeature4: 'Verified leads',
-      
-      // Testimonial
       testimonial: 'Joining as a service provider was the best decision. My business has grown 3x in just 6 months!',
       testimonialAuthor: 'Rajesh Kumar',
-      testimonialTitle: 'Plumber & Service Provider'
+      testimonialTitle: 'Plumber & Service Provider',
     },
-    // Contact Section
+
     contact: {
       title: 'Contact Us',
       email: 'Email: support@handio.com',
@@ -174,7 +155,6 @@ export const translations = {
       location: 'Location: Pune, Maharashtra',
     },
 
-    // Services Section
     services: {
       title: 'Our Services',
       subtitle: 'Book trusted professionals for everyday home services',
@@ -191,7 +171,6 @@ export const translations = {
       paintingDesc: 'Quality paint work',
     },
 
-    // Search Providers
     searchProviders: {
       title: 'Find Perfect Service Providers',
       subtitle: 'Discover trusted professionals in your area',
@@ -206,7 +185,6 @@ export const translations = {
       viewProfile: 'View Profile',
     },
 
-    // Provider Dashboard
     providerDashboard: {
       profilePhoto: 'Your Profile Photo',
       uploadPhoto: 'Upload Photo',
@@ -230,7 +208,6 @@ export const translations = {
       markCompleted: '✔ Mark Completed',
     },
 
-    // Customer Bookings
     customerBookings: {
       title: 'My Bookings',
       subtitle: 'Track your service bookings',
@@ -251,7 +228,6 @@ export const translations = {
       reviewed: '⭐ Reviewed',
     },
 
-    // Provider Profile
     providerProfile: {
       priceNotSpecified: 'Price not specified',
       selectDate: 'Please select a date',
@@ -269,40 +245,34 @@ export const translations = {
     },
 
     featuredProviders: {
-      title: "Top Rated Professionals",
-      viewProfile: "View Profile",
-      viewAll: "View All Providers",
-      new: "New"
-    },
-
-    // Footer
-    footer: {
-      copyright: '© 2026 Handio. All rights reserved.',
-    },
-
-    landing: {
-      services: 'Services',
-      contact: 'Contact',
-      popularServices: 'Popular Services',
-      popularServicesSubtitle: "Choose from our top-rated professional services"
+      title: 'Top Rated Professionals',
+      viewProfile: 'View Profile',
+      viewAll: 'View All Providers',
+      new: 'New',
     },
 
     stats: {
-      customers: "Happy Customers",
-      providers: "Verified Providers",
-      cities: "Cities Covered",
-      rating: "Average Rating"
+      customers: 'Happy Customers',
+      providers: 'Verified Providers',
+      cities: 'Cities Covered',
+      rating: 'Average Rating',
     },
 
     cta: {
-      title: "Become a Service Provider",
-      subtitle: "Earn money by offering your skills to thousands of customers.",
-      button: "Join as Provider"
+      title: 'Become a Service Provider',
+      subtitle: 'Earn money by offering your skills to thousands of customers.',
+      button: 'Join as Provider',
+    },
+
+    footer: {
+      copyright: '© 2026 Handio. All rights reserved.',
     },
   },
 
+  // ─────────────────────────────────────────────
+  // HINDI
+  // ─────────────────────────────────────────────
   hi: {
-    // Navbar
     navbar: {
       login: 'लॉगिन करें',
       register: 'पंजीकरण करें',
@@ -313,14 +283,14 @@ export const translations = {
       admin: 'एडमिन',
       logout: 'लॉगआउट करें',
     },
-    
-    // Landing Page
+
     landing: {
       services: 'सेवाएं',
       contact: 'संपर्क करें',
+      popularServices: 'लोकप्रिय सेवाएं',
+      popularServicesSubtitle: 'हमारी शीर्ष रेटेड पेशेवर सेवाओं में से चुनें',
     },
 
-    // Hero Section
     hero: {
       trustedBadge: '50,000+ घर मालिकों द्वारा विश्वसनीय',
       titlePart1: 'विश्वसनीय स्थानीय ',
@@ -333,7 +303,6 @@ export const translations = {
       btnBecomeProvider: 'प्रदाता बनें',
     },
 
-    // How It Works
     howItWorks: {
       badge: '✦ सरल प्रक्रिया ✦',
       title: 'हैंडिओ कैसे काम करता है',
@@ -357,7 +326,6 @@ export const translations = {
       footer: 'बुकिंग से पूरा होने तक, हम इसे आसान बनाते हैं',
     },
 
-    // Features Section
     features: {
       title: 'हैंडिओ क्यों चुनें',
       feature1: '✔ सत्यापित प्रदाता',
@@ -366,15 +334,13 @@ export const translations = {
       feature4: '✔ सुरक्षित मंच',
     },
 
- 
-      featuredProviders: {
-        title: "शीर्ष रेटेड प्रोफेशनल्स",
-        viewProfile: "प्रोफाइल देखें",
-        viewAll: "सभी प्रोवाइडर देखें",
-        new: "नया"
-      },
+    featuredProviders: {
+      title: 'शीर्ष रेटेड प्रोफेशनल्स',
+      viewProfile: 'प्रोफाइल देखें',
+      viewAll: 'सभी प्रोवाइडर देखें',
+      new: 'नया',
+    },
 
-    // Login Page
     login: {
       title: 'अपने खाते में साइन इन करें',
       subtitle: 'वापसी पर स्वागत है! कृपया अपना विवरण दर्ज करें',
@@ -405,10 +371,9 @@ export const translations = {
       showPassword: 'पासवर्ड दिखाएं',
       orContinueWith: 'या इसके साथ जारी रखें',
       google: 'गूगल',
-      github: 'गिटहब'
+      github: 'गिटहब',
     },
 
-    // Register Page
     register: {
       title: 'खाता बनाएं',
       subtitle: 'हमसे जुड़ें और मिनटों में शुरू करें',
@@ -430,7 +395,6 @@ export const translations = {
       creating: 'खाता बनाया जा रहा है...',
       haveAccount: 'पहले से खाता है?',
       signIn: 'साइन इन करें',
-      
       fillAllFields: 'कृपया सभी फ़ील्ड भरें',
       passwordMismatch: 'पासवर्ड मेल नहीं खाते',
       agreeTerms: 'कृपया नियम और शर्तों से सहमत हों',
@@ -438,36 +402,30 @@ export const translations = {
       invalidEmail: 'कृपया एक वैध ईमेल पता दर्ज करें',
       emailExists: 'ईमेल पहले से पंजीकृत है',
       genericError: 'पंजीकरण विफल। कृपया पुनः प्रयास करें।',
-      
       weak: 'कमजोर',
       fair: 'मध्यम',
       good: 'अच्छा',
       strong: 'मजबूत',
-      
       termsOfService: 'सेवा की शर्तें',
       privacyPolicy: 'गोपनीयता नीति',
       and: 'और',
-      
       hidePassword: 'पासवर्ड छुपाएं',
       showPassword: 'पासवर्ड दिखाएं',
-      
       customerDescription: 'भारत के सर्वश्रेष्ठ घरेलू सेवा पेशेवरों तक पहुंच प्राप्त करें',
       customerFeature1: 'विश्वसनीय पेशेवरों को बुक करें',
       customerFeature2: 'सुरक्षित भुगतान',
       customerFeature3: '24/7 ग्राहक सहायता',
       customerFeature4: 'संतुष्टि की गारंटी',
-      
       providerDescription: 'हजारों खुश ग्राहकों के साथ अपना व्यवसाय बढ़ाएं',
       providerFeature1: 'अधिक ग्राहकों तक पहुंचें',
       providerFeature2: 'लचीले काम के घंटे',
       providerFeature3: 'तत्काल भुगतान',
       providerFeature4: 'सत्यापित लीड',
-      
       testimonial: 'सेवा प्रदाता के रूप में शामिल होना सबसे अच्छा निर्णय था। मेरा व्यवसाय सिर्फ 6 महीनों में 3 गुना बढ़ गया है!',
       testimonialAuthor: 'राजेश कुमार',
-      testimonialTitle: 'प्लंबर और सेवा प्रदाता'
+      testimonialTitle: 'प्लंबर और सेवा प्रदाता',
     },
-    // Contact Section
+
     contact: {
       title: 'हमसे संपर्क करें',
       email: 'ईमेल: support@handio.com',
@@ -475,7 +433,6 @@ export const translations = {
       location: 'स्थान: पुणे, महाराष्ट्र',
     },
 
-    // Services Section
     services: {
       title: 'हमारी सेवाएं',
       subtitle: 'दैनिक घरेलू सेवाओं के लिए विश्वसनीय पेशेवरों को बुक करें',
@@ -492,7 +449,6 @@ export const translations = {
       paintingDesc: 'गुणवत्ता पेंट कार्य',
     },
 
-    // Search Providers
     searchProviders: {
       title: 'परफेक्ट सेवा प्रदाता खोजें',
       subtitle: 'अपने क्षेत्र में विश्वसनीय पेशेवरों की खोज करें',
@@ -507,7 +463,6 @@ export const translations = {
       viewProfile: 'प्रोफाइल देखें',
     },
 
-    // Provider Dashboard
     providerDashboard: {
       profilePhoto: 'आपकी प्रोफाइल फोटो',
       uploadPhoto: 'फोटो अपलोड करें',
@@ -531,7 +486,6 @@ export const translations = {
       markCompleted: '✔ पूर्ण के रूप में चिह्नित करें',
     },
 
-    // Customer Bookings
     customerBookings: {
       title: 'मेरी बुकिंग',
       subtitle: 'अपनी सेवा बुकिंग ट्रैक करें',
@@ -552,109 +506,6 @@ export const translations = {
       reviewed: '⭐ समीक्षा की गई',
     },
 
-    // Provider Profile
-    providerProfile: {
-      priceNotSpecified: 'कीमत निर्दिष्ट नहीं है',
-      selectDate: 'कृपया एक तारीख चुनें',
-      bookingSuccess: 'बुकिंग सफल!',
-      bookingFailed: 'बुकिंग विफल। कृपया फिर से प्रयास करें।',
-      notLoggedIn: 'बुक करने के लिए कृपया लॉगिन करें',
-      bookingDate: 'बुकिंग की तारीख',
-      selectBookingDate: 'एक तारीख चुनें',
-      additionalNotes: 'अतिरिक्त नोट्स',
-      enterNotes: 'कोई विशेष अनुरोध दर्ज करें...',
-      bookNow: 'अभी बुक करें',
-      reviews: 'ग्राहक समीक्षाएं',
-      noReviews: 'अभी तक कोई समीक्षा नहीं',
-      averageRating: 'औसत रेटिंग',
-    },
-
-    // Contact Section
-    contact: {
-      title: 'हमसे संपर्क करें',
-      email: 'ईमेल: support@handio.com',
-      phone: 'फोन: +91 9876543210',
-      location: 'स्थान: पुणे, महाराष्ट्र',
-    },
-
-    // Services Section
-    services: {
-      title: 'हमारी सेवाएं',
-      subtitle: 'दैनिक घरेलू सेवाओं के लिए विश्वसनीय पेशेवरों को बुक करें',
-      bookNow: 'अभी बुक करें',
-      electrician: 'इलेक्ट्रीशियन',
-      electricianDesc: 'विश्वसनीय विद्युत कार्य',
-      plumber: 'प्लंबर',
-      plumberDesc: 'पेशेवार प्लंबिंग',
-      cleaning: 'सफाई',
-      cleaningDesc: 'संपूर्ण सफाई सेवाएं',
-      acRepair: 'AC मरम्मत',
-      acRepairDesc: 'विशेषज्ञ शीतलन समाधान',
-      painting: 'पेंटिंग',
-      paintingDesc: 'गुणवत्ता पेंट कार्य',
-    },
-
-    // Search Providers
-    searchProviders: {
-      title: 'परफेक्ट सेवा प्रदाता खोजें',
-      subtitle: 'अपने क्षेत्र में विश्वसनीय पेशेवरों की खोज करें',
-      selectCategory: 'श्रेणी चुनें',
-      selectCity: 'शहर चुनें',
-      selectArea: 'क्षेत्र चुनें',
-      search: 'खोजें',
-      searching: 'खोज जारी है...',
-      noResults: 'आश्चर्यजनक सेवा प्रदाताओं को खोजने के लिए खोज शुरू करें',
-      findingProviders: 'प्रदाता खोज रहे हैं...',
-      priceNotSpecified: 'कीमत निर्दिष्ट नहीं है',
-      viewProfile: 'प्रोफाइल देखें',
-    },
-
-    // Provider Dashboard
-    providerDashboard: {
-      profilePhoto: 'आपकी प्रोफाइल फोटो',
-      uploadPhoto: 'फोटो अपलोड करें',
-      uploadHint: 'सिफारिश: सर्वोत्तम परिणामों के लिए वर्ग छवि',
-      removePhoto: 'फोटो हटाएं',
-      workPortfolio: 'आपका कार्य पोर्टफोलियो',
-      managePortfolio: 'पोर्टफोलियो प्रबंधित करें',
-      bookingRequests: 'बुकिंग अनुरोध',
-      manageRequests: 'अपने सेवा अनुरोधों को प्रबंधित करें',
-      totalBookings: 'कुल बुकिंग',
-      pending: 'लंबित',
-      accepted: 'स्वीकृत',
-      rejected: 'अस्वीकृत',
-      loadingBookings: 'बुकिंग लोड हो रही हैं...',
-      noBookings: 'दिखाने के लिए कोई बुकिंग नहीं',
-      noPendingBookings: 'कोई लंबित बुकिंग नहीं',
-      notes: 'नोट्स',
-      noAdditionalNotes: 'कोई अतिरिक्त नोट्स नहीं',
-      accept: '✓ स्वीकार करें',
-      reject: '✕ अस्वीकार करें',
-      markCompleted: '✔ पूर्ण के रूप में चिह्नित करें',
-    },
-
-    // Customer Bookings
-    customerBookings: {
-      title: 'मेरी बुकिंग',
-      subtitle: 'अपनी सेवा बुकिंग ट्रैक करें',
-      totalBookings: 'कुल बुकिंग',
-      pending: 'लंबित',
-      confirmed: 'पुष्टि किया गया',
-      completed: 'पूर्ण',
-      noPending: 'कोई लंबित बुकिंग नहीं',
-      noCompleted: 'कोई पूर्ण बुकिंग नहीं',
-      provider: 'प्रदाता',
-      category: 'श्रेणी',
-      bookingStatus: 'बुकिंग स्थिति',
-      pendingStatus: 'लंबित',
-      confirmedStatus: 'पुष्टि किया गया',
-      rejectedStatus: 'अस्वीकृत',
-      completedStatus: 'पूर्ण',
-      leaveReview: 'समीक्षा छोड़ें ⭐',
-      reviewed: '⭐ समीक्षा की गई',
-    },
-
-    // Provider Profile
     providerProfile: {
       priceNotSpecified: 'कीमत निर्दिष्ट नहीं है',
       selectDate: 'कृपया एक तारीख चुनें',
@@ -673,33 +524,28 @@ export const translations = {
       redirecting: 'आपकी बुकिंग पर रीडायरेक्ट हो रहे हैं...',
     },
 
-    // Footer
+    stats: {
+      customers: 'खुश ग्राहक',
+      providers: 'सत्यापित प्रदाता',
+      cities: 'शहर कवर किए',
+      rating: 'औसत रेटिंग',
+    },
+
+    cta: {
+      title: 'सेवा प्रदाता बनें',
+      subtitle: 'अपने कौशल से हजारों ग्राहकों को सेवा देकर कमाएं।',
+      button: 'प्रदाता के रूप में जुड़ें',
+    },
+
     footer: {
       copyright: '© 2026 हैंडिओ। सर्वाधिकार सुरक्षित।',
     },
-
-    landing: {
-      services: 'सेवाएं',
-      contact: 'संपर्क करें',
-      popularServices: 'लोकप्रिय सेवाएं',
-      popularServicesSubtitle: "हमारी शीर्ष रेटेड पेशेवर सेवाओं में से चुनें"
-    },
-
-    stats: {
-      customers: "खुश ग्राहक",
-      providers: "सत्यापित प्रदाता",
-      cities: "सेवा शहर",
-      rating: "औसत रेटिंग"
-    },
-    cta: {
-      title: "सेवा प्रदाता बनें",
-      subtitle: "अपने कौशल से हजारों ग्राहकों की सेवा करके कमाएं।",
-      button: "प्रदाता के रूप में जुड़ें"
-    },
   },
 
+  // ─────────────────────────────────────────────
+  // MARATHI
+  // ─────────────────────────────────────────────
   mr: {
-    // Navbar
     navbar: {
       login: 'लॉगिन करा',
       register: 'नोंदणी करा',
@@ -710,14 +556,14 @@ export const translations = {
       admin: 'प्रशासक',
       logout: 'बाहेर पडा',
     },
-    
-    // Landing Page
+
     landing: {
       services: 'सेवा',
       contact: 'संपर्क',
+      popularServices: 'लोकप्रिय सेवा',
+      popularServicesSubtitle: 'आमच्या सर्वोच्च रेटेड व्यावसायिक सेवांमधून निवडा',
     },
 
-    // Hero Section
     hero: {
       trustedBadge: '50,000+ गृहस्वामींनी विश्वास ठेवलेले',
       titlePart1: 'विश्वासार्ह स्थानिक ',
@@ -730,7 +576,6 @@ export const translations = {
       btnBecomeProvider: 'प्रदाता व्हा',
     },
 
-    // How It Works
     howItWorks: {
       badge: '✦ सोपी प्रक्रिया ✦',
       title: 'हँडिओ कसे काम करते',
@@ -754,7 +599,6 @@ export const translations = {
       footer: 'बुकिंगपासून पूर्णतेपर्यंत, आम्ही ते सोपे बनवतो',
     },
 
-    // Features Section
     features: {
       title: 'हँडिओ का निवडा',
       feature1: '✔ सत्यापित प्रदाता',
@@ -763,15 +607,13 @@ export const translations = {
       feature4: '✔ सुरक्षित प्लॅटफॉर्म',
     },
 
-      featuredProviders: {
-        title: "उत्तम रेटिंग असलेले सेवा प्रदाते",
-        viewProfile: "प्रोफाइल पहा",
-        viewAll: "सर्व सेवा प्रदाते पहा",
-        new: "नवीन"
-      },
+    featuredProviders: {
+      title: 'उत्तम रेटिंग असलेले सेवा प्रदाते',
+      viewProfile: 'प्रोफाइल पहा',
+      viewAll: 'सर्व सेवा प्रदाते पहा',
+      new: 'नवीन',
+    },
 
-
-    // Login Page
     login: {
       title: 'तुमच्या खात्यात साइन इन करा',
       subtitle: 'पुन्हा स्वागत आहे! कृपया तुमचे तपशील प्रविष्ट करा',
@@ -802,10 +644,9 @@ export const translations = {
       showPassword: 'पासवर्ड दाखवा',
       orContinueWith: 'किंवा यासह सुरू ठेवा',
       google: 'गूगल',
-      github: 'गिटहब'
+      github: 'गिटहब',
     },
 
-    // Register Page
     register: {
       title: 'खाते तयार करा',
       subtitle: 'आमच्यात सामील व्हा आणि मिनिटांत सुरुवात करा',
@@ -827,7 +668,6 @@ export const translations = {
       creating: 'खाते तयार होत आहे...',
       haveAccount: 'आधीपासून खाते आहे?',
       signIn: 'साइन इन करा',
-      
       fillAllFields: 'कृपया सर्व फील्ड भरा',
       passwordMismatch: 'पासवर्ड जुळत नाहीत',
       agreeTerms: 'कृपया नियम आणि अटींशी सहमत व्हा',
@@ -835,36 +675,30 @@ export const translations = {
       invalidEmail: 'कृपया वैध ईमेल पत्ता प्रविष्ट करा',
       emailExists: 'ईमेल आधीपासून नोंदणीकृत आहे',
       genericError: 'नोंदणी अयशस्वी. कृपया पुन्हा प्रयत्न करा.',
-      
       weak: 'कमकुवत',
       fair: 'मध्यम',
       good: 'चांगले',
       strong: 'मजबूत',
-      
       termsOfService: 'सेवेच्या अटी',
       privacyPolicy: 'गोपनीयता धोरण',
       and: 'आणि',
-      
       hidePassword: 'पासवर्ड लपवा',
       showPassword: 'पासवर्ड दाखवा',
-      
       customerDescription: 'भारतातील सर्वोत्तम घरगुती सेवा व्यावसायिकांमध्ये प्रवेश मिळवा',
       customerFeature1: 'विश्वासू व्यावसायिकांना बुक करा',
       customerFeature2: 'सुरक्षित पेमेंट',
       customerFeature3: '24/7 ग्राहक समर्थन',
       customerFeature4: 'समाधान हमी',
-      
       providerDescription: 'हजारो आनंदी ग्राहकांसह आपला व्यवसाय वाढवा',
       providerFeature1: 'अधिक ग्राहकांपर्यंत पोहोचा',
       providerFeature2: 'लवचिक कामाचे तास',
       providerFeature3: 'त्वरित पेमेंट',
       providerFeature4: 'सत्यापित लीड',
-      
       testimonial: 'सेवा प्रदाता म्हणून सामील होणे हा सर्वोत्तम निर्णय होता. माझा व्यवसाय फक्त 6 महिन्यांत 3 पट वाढला आहे!',
       testimonialAuthor: 'राजेश कुमार',
-      testimonialTitle: 'प्लंबर आणि सेवा प्रदाता'
+      testimonialTitle: 'प्लंबर आणि सेवा प्रदाता',
     },
-    // Contact Section
+
     contact: {
       title: 'आमच्याशी संपर्क साधा',
       email: 'ईमेल: support@handio.com',
@@ -872,7 +706,6 @@ export const translations = {
       location: 'स्थान: पुणे, महाराष्ट्र',
     },
 
-    // Services Section
     services: {
       title: 'आमच्या सेवा',
       subtitle: 'दैनंदिन घरगुती सेवांसाठी विश्वास्त व्यावसायिकांना बुक करा',
@@ -889,7 +722,6 @@ export const translations = {
       paintingDesc: 'गुणवत्तेचे रंग कार्य',
     },
 
-    // Search Providers
     searchProviders: {
       title: 'परफेक्ट सेवा प्रदाता शोधा',
       subtitle: 'तुमच्या क्षेत्रातील विश्वास्त व्यावसायिकांचा शोध घ्या',
@@ -904,7 +736,6 @@ export const translations = {
       viewProfile: 'प्रोफाइल पहा',
     },
 
-    // Provider Dashboard
     providerDashboard: {
       profilePhoto: 'तुमचे प्रोफाइल फोटो',
       uploadPhoto: 'फोटो अपलोड करा',
@@ -928,7 +759,6 @@ export const translations = {
       markCompleted: '✔ पूर्ण म्हणून चिन्हांकित करा',
     },
 
-    // Customer Bookings
     customerBookings: {
       title: 'माझ्या बुकिंग',
       subtitle: 'तुमच्या सेवा बुकिंग ट्रॅक करा',
@@ -949,7 +779,6 @@ export const translations = {
       reviewed: '⭐ पुनरावलोकन केले',
     },
 
-    // Provider Profile
     providerProfile: {
       priceNotSpecified: 'किंमत निर्दिष्ट नाही',
       selectDate: 'कृपया एक तारीख निवडा',
@@ -968,34 +797,28 @@ export const translations = {
       redirecting: 'तुमच्या बुकिंगला रीडायरेक्ट करत आहे...',
     },
 
-    // Footer
+    stats: {
+      customers: 'आनंदी ग्राहक',
+      providers: 'सत्यापित प्रदाता',
+      cities: 'शहरे समाविष्ट',
+      rating: 'सरासरी रेटिंग',
+    },
+
+    cta: {
+      title: 'सेवा प्रदाता व्हा',
+      subtitle: 'तुमच्या कौशल्यांचा वापर करून हजारो ग्राहकांकडून कमवा.',
+      button: 'प्रदाता म्हणून सामील व्हा',
+    },
+
     footer: {
       copyright: '© 2026 हँडिओ. सर्व अधिकार सुरक्षित.',
     },
-
-    landing: {
-      services: 'सेवा',
-      contact: 'संपर्क',
-      popularServices: 'लोकप्रिय सेवा',
-      popularServicesSubtitle: "आमच्या सर्वोत्तम रेटिंग असलेल्या व्यावसायिक सेवांमधून निवडा"
-    },
-
-    stats: {
-      customers: "आनंदी ग्राहक",
-      providers: "सत्यापित प्रदाते",
-      cities: "सेवा शहरे",
-      rating: "सरासरी रेटिंग"
-    },
-    cta: {
-      title: "सेवा प्रदाता बना",
-      subtitle: "तुमच्या कौशल्याने हजारो ग्राहकांना सेवा देऊन कमवा.",
-      button: "प्रदाता म्हणून सामील व्हा"
-    },
-  
   },
 
+  // ─────────────────────────────────────────────
+  // BENGALI
+  // ─────────────────────────────────────────────
   bn: {
-    // Navbar
     navbar: {
       login: 'লগইন করুন',
       register: 'নিবন্ধন করুন',
@@ -1006,14 +829,14 @@ export const translations = {
       admin: 'প্রশাসক',
       logout: 'লগ আউট করুন',
     },
-    
-    // Landing Page
+
     landing: {
       services: 'সেবা',
       contact: 'যোগাযোগ করুন',
+      popularServices: 'জনপ্রিয় পরিষেবা',
+      popularServicesSubtitle: 'আমাদের শীর্ষ রেটেড পেশাদার পরিষেবাগুলির মধ্যে থেকে বেছে নিন',
     },
 
-    // Hero Section
     hero: {
       trustedBadge: '50,000+ গৃহস্বামী দ্বারা বিশ্বস্ত',
       titlePart1: 'বিশ্বস্ত স্থানীয় ',
@@ -1026,7 +849,6 @@ export const translations = {
       btnBecomeProvider: 'প্রদানকারী হন',
     },
 
-    // How It Works
     howItWorks: {
       badge: '✦ সহজ প্রক্রিয়া ✦',
       title: 'হ্যান্ডিও কীভাবে কাজ করে',
@@ -1050,7 +872,6 @@ export const translations = {
       footer: 'বুকিং থেকে সমাপ্তি পর্যন্ত, আমরা এটি সহজ করে তুলি',
     },
 
-    // Features Section
     features: {
       title: 'কেন হ্যান্ডিও বেছে নিন',
       feature1: '✔ যাচাইকৃত প্রদানকারী',
@@ -1059,15 +880,13 @@ export const translations = {
       feature4: '✔ নিরাপদ প্ল্যাটফর্ম',
     },
 
-   
     featuredProviders: {
-      title: "শীর্ষ রেটেড পেশাদাররা",
-      viewProfile: "প্রোফাইল দেখুন",
-      viewAll: "সব প্রদানকারী দেখুন",
-      new: "নতুন"
+      title: 'শীর্ষ রেটেড পেশাদাররা',
+      viewProfile: 'প্রোফাইল দেখুন',
+      viewAll: 'সব প্রদানকারী দেখুন',
+      new: 'নতুন',
     },
 
-    // Login Page
     login: {
       title: 'আপনার অ্যাকাউন্টে সাইন ইন করুন',
       subtitle: 'ফিরে আসার জন্য স্বাগতম! আপনার বিবরণ লিখুন',
@@ -1098,10 +917,9 @@ export const translations = {
       showPassword: 'পাসওয়ার্ড দেখান',
       orContinueWith: 'অথবা এর সাথে চালিয়ে যান',
       google: 'গুগল',
-      github: 'গিটহাব'
+      github: 'গিটহাব',
     },
 
-    // Register Page
     register: {
       title: 'একটি অ্যাকাউন্ট তৈরি করুন',
       subtitle: 'আমাদের সাথে যোগ দিন এবং মিনিটের মধ্যে শুরু করুন',
@@ -1123,7 +941,6 @@ export const translations = {
       creating: 'অ্যাকাউন্ট তৈরি হচ্ছে...',
       haveAccount: 'ইতিমধ্যে একটি অ্যাকাউন্ট আছে?',
       signIn: 'সাইন ইন করুন',
-      
       fillAllFields: 'অনুগ্রহ করে সমস্ত ক্ষেত্র পূরণ করুন',
       passwordMismatch: 'পাসওয়ার্ড মিলছে না',
       agreeTerms: 'অনুগ্রহ করে শর্তাবলীতে সম্মত হন',
@@ -1131,61 +948,52 @@ export const translations = {
       invalidEmail: 'অনুগ্রহ করে একটি বৈধ ইমেইল ঠিকানা লিখুন',
       emailExists: 'ইমেইল ইতিমধ্যে নিবন্ধিত',
       genericError: 'নিবন্ধন ব্যর্থ হয়েছে। আবার চেষ্টা করুন।',
-      
       weak: 'দুর্বল',
       fair: 'মাঝারি',
       good: 'ভাল',
       strong: 'শক্তিশালী',
-      
       termsOfService: 'পরিষেবার শর্তাবলী',
       privacyPolicy: 'গোপনীয়তা নীতি',
       and: 'এবং',
-      
       hidePassword: 'পাসওয়ার্ড লুকান',
       showPassword: 'পাসওয়ার্ড দেখান',
-      
       customerDescription: 'ভারতের সেরা হোম সার্ভিস পেশাদারদের অ্যাক্সেস পান',
       customerFeature1: 'বিশ্বস্ত পেশাদারদের বুক করুন',
       customerFeature2: 'নিরাপদ পেমেন্ট',
       customerFeature3: '24/7 গ্রাহক সহায়তা',
       customerFeature4: 'সন্তুষ্টি গ্যারান্টিযুক্ত',
-      
       providerDescription: 'হাজার হাজার সন্তুষ্ট গ্রাহকের সাথে আপনার ব্যবসা বাড়ান',
       providerFeature1: 'আরও গ্রাহকদের কাছে পৌঁছান',
       providerFeature2: 'নমনীয় কাজের সময়',
       providerFeature3: 'তাৎক্ষণিক পেমেন্ট',
       providerFeature4: 'যাচাইকৃত লিড',
-      
       testimonial: 'একটি পরিষেবা প্রদানকারী হিসাবে যোগদান করা ছিল সেরা সিদ্ধান্ত। মাত্র ৬ মাসে আমার ব্যবসা ৩ গুণ বেড়েছে!',
       testimonialAuthor: 'রাজেশ কুমার',
-      testimonialTitle: 'প্লাম্বার ও পরিষেবা প্রদানকারী'
-    },
-    // Footer
-    footer: {
-      copyright: '© 2026 হ্যান্ডিও। সমস্ত অধিকার সংরক্ষিত।',
-    },
-    landing: {
-      services: 'সেবা',
-      contact: 'যোগাযোগ',
-      popularServices: 'জনপ্রিয় পরিষেবা',
-      popularServicesSubtitle: "আমাদের শীর্ষ রেটেড পেশাদার পরিষেবাগুলির মধ্যে থেকে বেছে নিন"
+      testimonialTitle: 'প্লাম্বার ও পরিষেবা প্রদানকারী',
     },
 
     stats: {
-      customers: "খুশি গ্রাহক",
-      providers: "যাচাইকৃত পরিষেবা প্রদানকারী",
-      cities: "সেবা শহর",
-      rating: "গড় রেটিং"
+      customers: 'খুশি গ্রাহক',
+      providers: 'যাচাইকৃত পরিষেবা প্রদানকারী',
+      cities: 'সেবা শহর',
+      rating: 'গড় রেটিং',
     },
+
     cta: {
-      title: "সেবা প্রদানকারী হন",
-      subtitle: "আপনার দক্ষতা ব্যবহার করে হাজারো গ্রাহকের কাছ থেকে আয় করুন।",
-      button: "প্রদানকারী হিসেবে যোগ দিন"
+      title: 'সেবা প্রদানকারী হন',
+      subtitle: 'আপনার দক্ষতা ব্যবহার করে হাজারো গ্রাহকের কাছ থেকে আয় করুন।',
+      button: 'প্রদানকারী হিসেবে যোগ দিন',
+    },
+
+    footer: {
+      copyright: '© 2026 হ্যান্ডিও। সমস্ত অধিকার সংরক্ষিত।',
     },
   },
 
+  // ─────────────────────────────────────────────
+  // TAMIL
+  // ─────────────────────────────────────────────
   ta: {
-    // Navbar
     navbar: {
       login: 'உள்நுழைக',
       register: 'பதிவு செய்க',
@@ -1196,14 +1004,14 @@ export const translations = {
       admin: 'நிர்வாகி',
       logout: 'வெளியேறு',
     },
-    
-    // Landing Page
+
     landing: {
       services: 'சேவைகள்',
       contact: 'தொடர்பு',
+      popularServices: 'பிரபல சேவைகள்',
+      popularServicesSubtitle: 'எங்கள் சிறந்த மதிப்பீடு செய்யப்பட்ட சேவைகளில் இருந்து தேர்வு செய்யுங்கள்',
     },
 
-    // Hero Section
     hero: {
       trustedBadge: '50,000+ வீட்டு உரிமையாளர்களால் நம்பிக்கை வைக்கப்பட்ட',
       titlePart1: 'நம்பகமான உள்ளூர் ',
@@ -1216,7 +1024,6 @@ export const translations = {
       btnBecomeProvider: 'வழங்குநர் ஆகவும்',
     },
 
-    // How It Works
     howItWorks: {
       badge: '✦ எளிய செயல்முறை ✦',
       title: 'Handio எவ்வாறு செயல்படுகிறது',
@@ -1240,15 +1047,21 @@ export const translations = {
       footer: 'முன்பதிவு முதல் முடிவு வரை, நாங்கள் இதை எளிதாக்குகிறோம்',
     },
 
-    // Features Section
-    featuredProviders: {
-      title: "சிறந்த மதிப்பீடு பெற்ற நிபுணர்கள்",
-      viewProfile: "சுயவிவரம் பார்க்க",
-      viewAll: "அனைத்து வழங்குநர்களையும் பார்க்க",
-      new: "புதியது"
+    features: {
+      title: 'ஏன் Handio தேர்வு செய்யவும்',
+      feature1: '✔ சரிபார்க்கப்பட்ட வழங்குநர்கள்',
+      feature2: '✔ எளிய முன்பதிவு',
+      feature3: '✔ நம்பகமான மதிப்பாய்வுகள்',
+      feature4: '✔ பாதுகாப்பான தளம்',
     },
 
-    // Login Page
+    featuredProviders: {
+      title: 'சிறந்த மதிப்பீடு பெற்ற நிபுணர்கள்',
+      viewProfile: 'சுயவிவரம் பார்க்க',
+      viewAll: 'அனைத்து வழங்குநர்களையும் பார்க்க',
+      new: 'புதியது',
+    },
+
     login: {
       title: 'உங்கள் கணக்கில் உள்நுழைக',
       subtitle: 'மீண்டும் வரவேற்கிறோம்! உங்கள் விவரங்களை உள்ளிடவும்',
@@ -1279,9 +1092,9 @@ export const translations = {
       showPassword: 'கடவுச்சொல்லைக் காட்டு',
       orContinueWith: 'அல்லது தொடரவும்',
       google: 'கூகிள்',
-      github: 'கிட்ஹப்'
+      github: 'கிட்ஹப்',
     },
-    // Register Page
+
     register: {
       title: 'கணக்கை உருவாக்கவும்',
       subtitle: 'எங்களுடன் சேர்ந்து நிமிடங்களில் தொடங்குங்கள்',
@@ -1303,7 +1116,6 @@ export const translations = {
       creating: 'கணக்கு உருவாக்கப்படுகிறது...',
       haveAccount: 'ஏற்கனவே கணக்கு உள்ளதா?',
       signIn: 'உள்நுழைக',
-      
       fillAllFields: 'அனைத்து புலங்களையும் நிரப்பவும்',
       passwordMismatch: 'கடவுச்சொற்கள் பொருந்தவில்லை',
       agreeTerms: 'விதிமுறைகள் மற்றும் நிபந்தனைகளை ஏற்கவும்',
@@ -1311,62 +1123,52 @@ export const translations = {
       invalidEmail: 'சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்',
       emailExists: 'மின்னஞ்சல் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது',
       genericError: 'பதிவு தோல்வியடைந்தது. மீண்டும் முயற்சிக்கவும்.',
-      
       weak: 'பலவீனமான',
       fair: 'சராசரி',
       good: 'நல்ல',
       strong: 'வலுவான',
-      
       termsOfService: 'சேவை விதிமுறைகள்',
       privacyPolicy: 'தனியுரிமைக் கொள்கை',
       and: 'மற்றும்',
-      
       hidePassword: 'கடவுச்சொல்லை மறை',
       showPassword: 'கடவுச்சொல்லைக் காட்டு',
-      
       customerDescription: 'இந்தியாவின் சிறந்த வீட்டு சேவை நிபுணர்களுக்கான அணுகலைப் பெறுங்கள்',
       customerFeature1: 'நம்பகமான நிபுணர்களை புக் செய்யுங்கள்',
       customerFeature2: 'பாதுகாப்பான கட்டணங்கள்',
       customerFeature3: '24/7 வாடிக்கையாளர் ஆதரவு',
       customerFeature4: 'திருப்தி உத்தரவாதம்',
-      
       providerDescription: 'ஆயிரக்கணக்கான மகிழ்ச்சியான வாடிக்கையாளர்களுடன் உங்கள் வணிகத்தை வளர்க்கவும்',
       providerFeature1: 'அதிக வாடிக்கையாளர்களை அடையுங்கள்',
       providerFeature2: 'நெகிழ்வான வேலை நேரங்கள்',
       providerFeature3: 'உடனடி கட்டணங்கள்',
       providerFeature4: 'சரிபார்க்கப்பட்ட முன்னணிகள்',
-      
       testimonial: 'சேவை வழங்குநராக சேர்வது சிறந்த முடிவு. வெறும் 6 மாதங்களில் எனது வணிகம் 3 மடங்கு வளர்ந்துள்ளது!',
       testimonialAuthor: 'ராஜேஷ் குமார்',
-      testimonialTitle: 'பிளம்பர் மற்றும் சேவை வழங்குநர்'
+      testimonialTitle: 'பிளம்பர் மற்றும் சேவை வழங்குநர்',
     },
-
-    // Footer
-    footer: {
-      copyright: '© 2026 Handio. அனைத்து உரிமைகளும் সংரक்ഷിত்தாக்கை.',
-    },
-    landing: {
-      services: 'சேவைகள்',
-      contact: 'தொடர்பு',
-      popularServices: 'பிரபல சேவைகள்',
-      popularServicesSubtitle: "எங்கள் சிறந்த மதிப்பீடு செய்யப்பட்ட சேவைகளில் இருந்து தேர்வு செய்யுங்கள்"
-    },  
 
     stats: {
-      customers: "மகிழ்ச்சியான வாடிக்கையாளர்கள்",
-      providers: "சரிபார்க்கப்பட்ட சேவை வழங்குநர்கள்",
-      cities: "சேவை நகரங்கள்",
-      rating: "சராசரி மதிப்பீடு"
+      customers: 'மகிழ்ச்சியான வாடிக்கையாளர்கள்',
+      providers: 'சரிபார்க்கப்பட்ட சேவை வழங்குநர்கள்',
+      cities: 'சேவை நகரங்கள்',
+      rating: 'சராசரி மதிப்பீடு',
     },
+
     cta: {
-      title: "சேவை வழங்குநராக சேருங்கள்",
-      subtitle: "உங்கள் திறமைகளை பயன்படுத்தி ஆயிரக்கணக்கான வாடிக்கையாளர்களிடம் இருந்து சம்பாதிக்கவும்.",
-      button: "வழங்குநராக சேரவும்"
+      title: 'சேவை வழங்குநராக சேருங்கள்',
+      subtitle: 'உங்கள் திறமைகளை பயன்படுத்தி ஆயிரக்கணக்கான வாடிக்கையாளர்களிடம் இருந்து சம்பாதிக்கவும்.',
+      button: 'வழங்குநராக சேரவும்',
+    },
+
+    footer: {
+      copyright: '© 2026 Handio. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
     },
   },
 
+  // ─────────────────────────────────────────────
+  // TELUGU
+  // ─────────────────────────────────────────────
   te: {
-    // Navbar
     navbar: {
       login: 'లాగిన్ చేయండి',
       register: 'నమోదు చేయండి',
@@ -1377,14 +1179,14 @@ export const translations = {
       admin: 'నిర్వాహకుడు',
       logout: 'లాగ్ అవుట్',
     },
-    
-    // Landing Page
+
     landing: {
       services: 'సేవలు',
-      contact: 'సంపర్కం',
+      contact: 'సంప్రదించండి',
+      popularServices: 'ప్రసిద్ధ సేవలు',
+      popularServicesSubtitle: 'మా అత్యుత్తమ రేటింగ్ పొందిన సేవలలో ఒకదాన్ని ఎంచుకోండి',
     },
 
-    // Hero Section
     hero: {
       trustedBadge: '50,000+ ఇల్లు యజమానులచే విశ్వసించిన',
       titlePart1: 'నమ్మదగిన స్థానిక ',
@@ -1397,7 +1199,6 @@ export const translations = {
       btnBecomeProvider: 'ప్రదాత అయండి',
     },
 
-    // How It Works
     howItWorks: {
       badge: '✦ సరళ ప్రక్రియ ✦',
       title: 'హ్యాండియో ఎలా పనిచేస్తుందో',
@@ -1421,7 +1222,6 @@ export const translations = {
       footer: 'బుకింగ్ నుండి పూర్తి వరకు, మేము దీన్ని సులభతరం చేస్తాము',
     },
 
-    // Features Section
     features: {
       title: 'హ్యాండియోను ఎందుకు ఎంచుకోండి',
       feature1: '✔ ధృవీకృత ప్రదాతలు',
@@ -1431,13 +1231,12 @@ export const translations = {
     },
 
     featuredProviders: {
-      title: "అత్యుత్తమ రేటింగ్ పొందిన నిపుణులు",
-      viewProfile: "ప్రొఫైల్ చూడండి",
-      viewAll: "అన్ని ప్రొవైడర్లను చూడండి",
-      new: "కొత్త"
+      title: 'అత్యుత్తమ రేటింగ్ పొందిన నిపుణులు',
+      viewProfile: 'ప్రొఫైల్ చూడండి',
+      viewAll: 'అన్ని ప్రొవైడర్లను చూడండి',
+      new: 'కొత్త',
     },
 
-    // Login Page
     login: {
       title: 'మీ ఖాతాలో సైన్ ఇన్ చేయండి',
       subtitle: 'తిరిగి స్వాగతం! దయచేసి మీ వివరాలను నమోదు చేయండి',
@@ -1468,9 +1267,9 @@ export const translations = {
       showPassword: 'పాస్‌వర్డ్ చూపించు',
       orContinueWith: 'లేదా దీనితో కొనసాగించండి',
       google: 'గూగుల్',
-      github: 'గిట్‌హబ్'
+      github: 'గిట్‌హబ్',
     },
-    // Register Page
+
     register: {
       title: 'ఖాతాను సృష్టించండి',
       subtitle: 'మాతో చేరండి మరియు నిమిషాల్లో ప్రారంభించండి',
@@ -1492,7 +1291,6 @@ export const translations = {
       creating: 'ఖాతా సృష్టించబడుతోంది...',
       haveAccount: 'ఇప్పటికే ఖాతా ఉందా?',
       signIn: 'సైన్ ఇన్ చేయండి',
-      
       fillAllFields: 'దయచేసి అన్ని ఫీల్డ్‌లను పూరించండి',
       passwordMismatch: 'పాస్‌వర్డ్‌లు సరిపోలడం లేదు',
       agreeTerms: 'దయచేసి నిబంధనలకు అంగీకరించండి',
@@ -1500,62 +1298,52 @@ export const translations = {
       invalidEmail: 'దయచేసి చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను నమోదు చేయండి',
       emailExists: 'ఇమెయిల్ ఇప్పటికే నమోదు చేయబడింది',
       genericError: 'నమోదు విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.',
-      
       weak: 'బలహీన',
       fair: 'మధ్యస్థ',
       good: 'మంచి',
       strong: 'బలమైన',
-      
       termsOfService: 'సేవా నిబంధనలు',
       privacyPolicy: 'గోప్యతా విధానం',
       and: 'మరియు',
-      
       hidePassword: 'పాస్‌వర్డ్ దాచు',
       showPassword: 'పాస్‌వర్డ్ చూపించు',
-      
       customerDescription: 'భారతదేశపు అత్యుత్తమ గృహ సేవా నిపుణులకు ప్రాప్తిని పొందండి',
       customerFeature1: 'నమ్మకమైన నిపుణులను బుక్ చేయండి',
       customerFeature2: 'సురక్షిత చెల్లింపులు',
       customerFeature3: '24/7 వినియోగదారు మద్దతు',
       customerFeature4: 'సంతృప్తి హామీ',
-      
       providerDescription: 'వేలాది సంతోషకరమైన వినియోగదారులతో మీ వ్యాపారాన్ని పెంచుకోండి',
       providerFeature1: 'మరింత మంది వినియోగదారులను చేరుకోండి',
       providerFeature2: 'సౌకర్యవంతమైన పని గంటలు',
       providerFeature3: 'తక్షణ చెల్లింపులు',
       providerFeature4: 'ధృవీకరించబడిన లీడ్స్',
-      
       testimonial: 'సేవా ప్రదాతగా చేరడం ఉత్తమ నిర్ణయం. కేవలం 6 నెలల్లో నా వ్యాపారం 3 రెట్లు పెరిగింది!',
       testimonialAuthor: 'రాజేష్ కుమార్',
-      testimonialTitle: 'ప్లంబర్ మరియు సేవా ప్రదాత'
-    },
-
-    // Footer
-    footer: {
-      copyright: '© 2026 హ్యాండియో. అన్ని హక్కులు సంరక్ష్ణలు.',
-    },
-    landing: {
-      services: 'సేవలు',
-      contact: 'సంప్రదించండి',
-      popularServices: 'ప్రసిద్ధ సేవలు',
-      popularServicesSubtitle: "మా అత్యుత్తమ రేటింగ్ పొందిన సేవలలో ఒకదాన్ని ఎంచుకోండి"
+      testimonialTitle: 'ప్లంబర్ మరియు సేవా ప్రదాత',
     },
 
     stats: {
-      customers: "సంతోషకరమైన కస్టమర్లు",
-      providers: "ధృవీకరించిన సేవా ప్రదాతలు",
-      cities: "సేవా నగరాలు",
-      rating: "సగటు రేటింగ్"
+      customers: 'సంతోషకరమైన కస్టమర్లు',
+      providers: 'ధృవీకరించిన సేవా ప్రదాతలు',
+      cities: 'సేవా నగరాలు',
+      rating: 'సగటు రేటింగ్',
     },
+
     cta: {
-      title: "సేవా ప్రదాతగా మారండి",
-      subtitle: "మీ నైపుణ్యాలను ఉపయోగించి వేలాది కస్టమర్ల నుండి సంపాదించండి.",
-      button: "ప్రదాతగా చేరండి"
+      title: 'సేవా ప్రదాతగా మారండి',
+      subtitle: 'మీ నైపుణ్యాలను ఉపయోగించి వేలాది కస్టమర్ల నుండి సంపాదించండి.',
+      button: 'ప్రదాతగా చేరండి',
+    },
+
+    footer: {
+      copyright: '© 2026 హ్యాండియో. అన్ని హక్కులు సంరక్షించబడ్డాయి.',
     },
   },
 
+  // ─────────────────────────────────────────────
+  // KANNADA
+  // ─────────────────────────────────────────────
   kn: {
-    // Navbar
     navbar: {
       login: 'ಲಾಗಿನ್ ಮಾಡಿ',
       register: 'ನೋಂದಾಯಿಸಿ',
@@ -1566,19 +1354,19 @@ export const translations = {
       admin: 'ನಿರ್ವಾಹಕ',
       logout: 'ನಿರ್ಗಮನ',
     },
-    
-    // Landing Page
+
     landing: {
       services: 'ಸೇವೆಗಳು',
       contact: 'ಸಂಪರ್ಕ',
+      popularServices: 'ಜನಪ್ರಿಯ ಸೇವೆಗಳು',
+      popularServicesSubtitle: 'ನಮ್ಮ ಅತ್ಯುತ್ತಮ ರೇಟಿಂಗ್ ಪಡೆದ ಸೇವೆಗಳಲ್ಲಿ ಆಯ್ಕೆ ಮಾಡಿ',
     },
 
-    // Hero Section
     hero: {
       trustedBadge: '50,000+ ಮನೆ ಮಾಲಿಕರಿಂದ ವಿಶ್ವಾಸಾರ್ಹ',
       titlePart1: 'ವಿಶ್ವಾಸಾರ್ಹ ಸ್ಥಳೀಯ ',
       titlePart2: 'ಸೇವಾ ಪ್ರದಾತರನ್ನು ಹುಡುಕಿ',
-      subtitle: 'ಪರಿಶೀಲಿತ ವಿದ್ಯುತ್ತಿನವರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ, ಲೋಹಿತೀಕರಣ, ಸಾಫ್ಟ್‌ವೇರ್ ಎಂಜಿನಿಯರ್‌ಗಳು ಮತ್ತು ವೃತ್ತಿಪರರು. ತಕ್ಷಣ ಬುಕ್ ಮಾಡಿ. ಗುಣಮಾನ ಖಾತರಿ ಪಡಿಸಲಾಗಿದೆ.',
+      subtitle: 'ಪರಿಶೀಲಿತ ವಿದ್ಯುತ್ ತಜ್ಞರು, ಪ್ಲಂಬರ್‌ಗಳು, ಶುಚಿಗೊಳಿಸುವವರು ಮತ್ತು ವೃತ್ತಿಪರರೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಿ. ತಕ್ಷಣ ಬುಕ್ ಮಾಡಿ. ಗುಣಮಾನ ಖಾತರಿ ಪಡಿಸಲಾಗಿದೆ.',
       stat1Label: 'ಪರಿಶೀಲಿತ ವೃತ್ತಿಪರರು',
       stat2Label: 'ಸರಾಸರಿ ರೇಟಿಂಗ್',
       stat3Label: 'ಹಣ-ಮರಳಿ ಖಾತರಿ',
@@ -1586,7 +1374,6 @@ export const translations = {
       btnBecomeProvider: 'ಪ್ರದಾತ ಆಗಿರಿ',
     },
 
-    // How It Works
     howItWorks: {
       badge: '✦ ಸರಳ ಪ್ರಕ್ರಿಯೆ ✦',
       title: 'ಹ್ಯಾಂಡಿಓ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ',
@@ -1610,7 +1397,6 @@ export const translations = {
       footer: 'ಬುಕಿಂಗ್‌ನಿಂದ ಪೂರ್ಣತೆವರೆಗೆ, ನಾವು ಅದನ್ನು ಸಾಧ್ಯವೆಂದು ಮಾಡುತ್ತೇವೆ',
     },
 
-    // Features Section
     features: {
       title: 'ಹ್ಯಾಂಡಿಓ ಏಕೆ ಆರಿಸಿಕೊಳ್ಳಿ',
       feature1: '✔ ಪರಿಶೀಲಿತ ಪ್ರದಾತರು',
@@ -1620,13 +1406,12 @@ export const translations = {
     },
 
     featuredProviders: {
-      title: "ಅತ್ಯುತ್ತಮ ರೇಟಿಂಗ್ ಹೊಂದಿರುವ ವೃತ್ತಿಪರರು",
-      viewProfile: "ಪ್ರೊಫೈಲ್ ನೋಡಿ",
-      viewAll: "ಎಲ್ಲಾ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ನೋಡಿ",
-      new: "ಹೊಸದು"
+      title: 'ಅತ್ಯುತ್ತಮ ರೇಟಿಂಗ್ ಹೊಂದಿರುವ ವೃತ್ತಿಪರರು',
+      viewProfile: 'ಪ್ರೊಫೈಲ್ ನೋಡಿ',
+      viewAll: 'ಎಲ್ಲಾ ಸೇವಾ ಪೂರೈಕೆದಾರರನ್ನು ನೋಡಿ',
+      new: 'ಹೊಸದು',
     },
 
-    // Login Page
     login: {
       title: 'ನಿಮ್ಮ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ',
       subtitle: 'ಮರಳಿ ಸ್ವಾಗತ! ದಯವಿಟ್ಟು ನಿಮ್ಮ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ',
@@ -1657,9 +1442,9 @@ export const translations = {
       showPassword: 'ಪಾಸ್‌ವರ್ಡ್ ತೋರಿಸಿ',
       orContinueWith: 'ಅಥವಾ ಇದರೊಂದಿಗೆ ಮುಂದುವರಿಸಿ',
       google: 'ಗೂಗಲ್',
-      github: 'ಗಿಟ್‌ಹಬ್'
+      github: 'ಗಿಟ್‌ಹಬ್',
     },
-    // Register Page
+
     register: {
       title: 'ಖಾತೆಯನ್ನು ರಚಿಸಿ',
       subtitle: 'ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ ಮತ್ತು ನಿಮಿಷಗಳಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿ',
@@ -1681,7 +1466,6 @@ export const translations = {
       creating: 'ಖಾತೆ ರಚಿಸಲಾಗುತ್ತಿದೆ...',
       haveAccount: 'ಈಗಾಗಲೇ ಖಾತೆ ಹೊಂದಿದ್ದೀರಾ?',
       signIn: 'ಸೈನ್ ಇನ್ ಮಾಡಿ',
-      
       fillAllFields: 'ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ',
       passwordMismatch: 'ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ',
       agreeTerms: 'ದಯವಿಟ್ಟು ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳಿಗೆ ಸಮ್ಮತಿಸಿ',
@@ -1689,57 +1473,45 @@ export const translations = {
       invalidEmail: 'ದಯವಿಟ್ಟು ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ',
       emailExists: 'ಇಮೇಲ್ ಈಗಾಗಲೇ ನೋಂದಾಯಿಸಲಾಗಿದೆ',
       genericError: 'ನೋಂದಣಿ ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
-      
       weak: 'ದುರ್ಬಲ',
       fair: 'ಮಧ್ಯಮ',
       good: 'ಉತ್ತಮ',
       strong: 'ಬಲವಾದ',
-      
       termsOfService: 'ಸೇವಾ ನಿಯಮಗಳು',
       privacyPolicy: 'ಗೌಪ್ಯತಾ ನೀತಿ',
       and: 'ಮತ್ತು',
-      
       hidePassword: 'ಪಾಸ್‌ವರ್ಡ್ ಮರೆಮಾಡಿ',
       showPassword: 'ಪಾಸ್‌ವರ್ಡ್ ತೋರಿಸಿ',
-      
       customerDescription: 'ಭಾರತದ ಅತ್ಯುತ್ತಮ ಮನೆ ಸೇವಾ ವೃತ್ತಿಪರರಿಗೆ ಪ್ರವೇಶ ಪಡೆಯಿರಿ',
       customerFeature1: 'ವಿಶ್ವಾಸಾರ್ಹ ವೃತ್ತಿಪರರನ್ನು ಬುಕ್ ಮಾಡಿ',
       customerFeature2: 'ಸುರಕ್ಷಿತ ಪಾವತಿಗಳು',
       customerFeature3: '24/7 ಗ್ರಾಹಕ ಬೆಂಬಲ',
       customerFeature4: 'ತೃಪ್ತಿ ಖಾತರಿ',
-      
       providerDescription: 'ಸಾವಿರಾರು ಸಂತೋಷದ ಗ್ರಾಹಕರೊಂದಿಗೆ ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ',
       providerFeature1: 'ಹೆಚ್ಚಿನ ಗ್ರಾಹಕರನ್ನು ತಲುಪಿ',
       providerFeature2: 'ಸ್ಥಿತಿಸ್ಥಾಪಕ ಕೆಲಸದ ಸಮಯ',
       providerFeature3: 'ತತ್‌ಕ್ಷಣ ಪಾವತಿಗಳು',
       providerFeature4: 'ಪರಿಶೀಲಿತ ಲೀಡ್‌ಗಳು',
-      
       testimonial: 'ಸೇವಾ ಪ್ರದಾತರಾಗಿ ಸೇರುವುದು ಅತ್ಯುತ್ತಮ ನಿರ್ಧಾರವಾಗಿತ್ತು. ಕೇವಲ 6 ತಿಂಗಳುಗಳಲ್ಲಿ ನನ್ನ ವ್ಯವಹಾರ 3 ಪಟ್ಟು ಬೆಳೆದಿದೆ!',
       testimonialAuthor: 'ರಾಜೇಶ್ ಕುಮಾರ್',
-      testimonialTitle: 'ಪ್ಲಂಬರ್ ಮತ್ತು ಸೇವಾ ಪ್ರದಾತ'
-    },
-    // Footer
-    footer: {
-      copyright: '© 2026 ಹ್ಯಾಂಡಿಓ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಸಂರಕ್ಷಿತ.',
-    },
-
-    landing: {
-      services: 'ಸೇವೆಗಳು',
-      contact: 'ಸಂಪರ್ಕಿಸಿ',
-      popularServices: 'ಜನಪ್ರಿಯ ಸೇವೆಗಳು',
-      popularServicesSubtitle: "ನಮ್ಮ ಅತ್ಯುತ್ತಮ ರೇಟಿಂಗ್ ಪಡೆದ ಸೇವೆಗಳಿಂದ ಆಯ್ಕೆಮಾಡಿ"
+      testimonialTitle: 'ಪ್ಲಂಬರ್ ಮತ್ತು ಸೇವಾ ಪ್ರದಾತ',
     },
 
     stats: {
-      customers: "ಸಂತೋಷದ ಗ್ರಾಹಕರು",
-      providers: "ಪರಿಶೀಲಿತ ಸೇವಾ ಪೂರೈಕೆದಾರರು",
-      cities: "ಸೇವಾ ನಗರಗಳು",
-      rating: "ಸರಾಸರಿ ರೇಟಿಂಗ್"
+      customers: 'ಸಂತೋಷದ ಗ್ರಾಹಕರು',
+      providers: 'ಪರಿಶೀಲಿತ ಸೇವಾ ಪ್ರದಾತರು',
+      cities: 'ಒಳಗೊಂಡ ನಗರಗಳು',
+      rating: 'ಸರಾಸರಿ ರೇಟಿಂಗ್',
     },
+
     cta: {
-      title: "ಸೇವಾ ಪೂರೈಕೆದಾರರಾಗಿ ಸೇರಿ",
-      subtitle: "ನಿಮ್ಮ ಕೌಶಲ್ಯಗಳನ್ನು ಬಳಸಿ ಸಾವಿರಾರು ಗ್ರಾಹಕರಿಂದ ಆದಾಯ ಗಳಿಸಿ.",
-      button: "ಪೂರೈಕೆದಾರರಾಗಿ ಸೇರಿ"
+      title: 'ಸೇವಾ ಪ್ರದಾತರಾಗಿ',
+      subtitle: 'ನಿಮ್ಮ ಕೌಶಲ್ಯಗಳನ್ನು ಬಳಸಿ ಸಾವಿರಾರು ಗ್ರಾಹಕರಿಗೆ ಸೇವೆ ನೀಡಿ ಸಂಪಾದಿಸಿ.',
+      button: 'ಪ್ರದಾತರಾಗಿ ಸೇರಿ',
+    },
+
+    footer: {
+      copyright: '© 2026 ಹ್ಯಾಂಡಿಓ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಸಂರಕ್ಷಿಸಲಾಗಿದೆ.',
     },
   },
 };
