@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useLanguage } from "../context/LanguageContext";
+// import { useLanguage } from "../context/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import styles from "./CustomerBookings.module.css";
 import ReviewForm from "../components/ReviewForm";
@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 export default function CustomerBookings() {
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
   const navigate = useNavigate();
 
   const [list, setList]                       = useState<any[]>([]);

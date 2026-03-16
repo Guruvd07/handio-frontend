@@ -6,7 +6,7 @@ import {
   updateBookingStatus
 } from "../services/bookingService";
 import { useNavigate } from "react-router-dom";
-import { useLanguage } from "../context/LanguageContext";
+// import { useLanguage } from "../context/LanguageContext";
 import api from "../api/axios";
 import styles from "./ProviderDashboard.module.css";
 import {
@@ -27,13 +27,13 @@ import {
   X,
   Inbox,
   Sparkles,
-  TrendingUp,
+
   Star,
   ClipboardList
 } from "lucide-react";
 
 function ProviderDashboard() {
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
   const navigate = useNavigate();
 
   const [bookings, setBookings] = useState<any[]>([]);
@@ -217,7 +217,11 @@ function ProviderDashboard() {
                     <div className={styles["photo-overlay"]}>
                       <button
                         className={styles["photo-edit-btn"]}
-                        onClick={() => document.getElementById('file-input')?.click()}
+                        onClick={() => {
+                          if (!uploadingPhoto) {
+                            document.getElementById('file-input')?.click();
+                          }
+                        }}
                       ><ImagePlus size={14} style={{ display: 'inline-block', marginRight: '4px' }} /> Edit</button>
                       <button className={styles["photo-delete-btn"]} onClick={deletePhoto}>
                         <X size={14} style={{ display: 'inline-block', marginRight: '4px' }} /> Remove
@@ -227,10 +231,16 @@ function ProviderDashboard() {
                 ) : (
                   <div
                     className={styles["profile-placeholder"]}
-                    onClick={() => document.getElementById('file-input')?.click()}
+                    onClick={() => {
+                      if (!uploadingPhoto) {
+                        document.getElementById('file-input')?.click();
+                      }
+                    }}
                   >
                     <User size={32} style={{ opacity: 0.5, marginBottom: '8px' }} />
-                    <span className={styles["placeholder-text"]}>Upload Photo</span>
+                    <span className={styles["placeholder-text"]}>
+                      {uploadingPhoto ? "Uploading..." : "Upload Photo"}
+                    </span>
                   </div>
                 )}
                 <input

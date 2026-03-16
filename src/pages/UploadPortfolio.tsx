@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../api/axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import styles from "./UploadPortfolio.module.css";
 import {
   ImagePlus,
@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 function UploadPortfolio() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
@@ -252,4 +252,3 @@ function UploadPortfolio() {
 }
 
 export default UploadPortfolio;
-  
