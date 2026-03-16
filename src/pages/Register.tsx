@@ -92,7 +92,7 @@ function Register() {
       if (userRole === "provider") {
         navigate("/create-provider-profile");
       } else {
-        navigate("/user/dashboard");
+        navigate("customer/dashboard");
       }
 
     } catch (err: any) {
