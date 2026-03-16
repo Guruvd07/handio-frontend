@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./cta.module.css";
 
 export default function Cta() {
@@ -27,16 +28,16 @@ export default function Cta() {
           <ul className={styles.hdCtaPoints}>
             <li><span className={styles.hdCtaCheck}>✓</span> Verified professionals only</li>
             <li><span className={styles.hdCtaCheck}>✓</span> Instant booking, real-time updates</li>
-            <li><span className={styles.hdCtaCheck}>✓</span> Rated &amp; reviewed by your neighbours</li>
+            <li><span className={styles.hdCtaCheck}>✓</span> Rated & reviewed by your neighbours</li>
           </ul>
 
-          <a href="/login" className={styles.hdCtaBtn}>
+          <Link to="/login" className={styles.hdCtaBtn}>
             Get Started →
-          </a>
+          </Link>
         </div>
 
         {/* RIGHT — image */}
-        <a href="/login" className={styles.hdCtaRight}>
+        <Link to="/login" className={styles.hdCtaRight}>
           {!imageError ? (
             <img
               src="/images/poster2.jpg"
@@ -52,7 +53,7 @@ export default function Cta() {
             </div>
           )}
           <div className={styles.hdCtaGlow} />
-        </a>
+        </Link>
 
       </div>
     </section>

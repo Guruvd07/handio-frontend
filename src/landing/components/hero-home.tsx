@@ -1,4 +1,5 @@
 import './hero.css';
+import { Link } from "react-router-dom";
 
 export default function HeroHome() {
   return (
@@ -31,21 +32,21 @@ export default function HeroHome() {
             
             {/* CTA Buttons */}
             <div className="hero-buttons" data-aos="fade-up" data-aos-delay={300}>
-              <div className="hero-button-wrapper">
-                <a className="hero-button-primary" href="/register">
-                  <span className="hero-button-text">
-                    Find Services
-                    <span className="hero-button-arrow"> →</span>
-                  </span>
-                </a>
-              </div>
-              
-              <div className="hero-button-wrapper">
-                <a className="hero-button-secondary" href="/register">
-                  Become a Provider
-                </a>
-              </div>
+            <div className="hero-button-wrapper">
+              <Link className="hero-button-primary" to="/register">
+                <span className="hero-button-text">
+                  Find Services
+                  <span className="hero-button-arrow"> →</span>
+                </span>
+              </Link>
             </div>
+
+            <div className="hero-button-wrapper">
+              <Link className="hero-button-secondary" to="/register">
+                Become a Provider
+              </Link>
+            </div>
+          </div>
 
             {/* Trust Badge with Stars */}
             <div className="hero-trust-badge" data-aos="fade-up" data-aos-delay={350}>
