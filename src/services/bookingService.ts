@@ -1,6 +1,4 @@
-import axios from "axios";
-
-const API = "http://localhost:5000";
+import api from "../api/axios";
 
 /* =========================
    CREATE BOOKING
@@ -12,8 +10,8 @@ export const createBooking = async (
   note: string,
   token: string
 ) => {
-  const res = await axios.post(
-    `${API}/bookings`,
+  const res = await api.post(
+    "/bookings",
     { providerId, date, note },
     {
       headers: {
@@ -30,17 +28,17 @@ export const createBooking = async (
 ========================= */
 
 export const getProviderBookings = async (token: string) => {
-  const res = await axios.get(`${API}/bookings/provider`, {
+  const res = await api.get("/bookings/provider", {
     headers: {
-      Authorization: `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   });
 
   return res.data;
 };
 
 /* =========================
-   UPDATE STATUS — FIXED URL
+   UPDATE STATUS
 ========================= */
 
 export const updateBookingStatus = async (
@@ -48,13 +46,13 @@ export const updateBookingStatus = async (
   status: string,
   token: string
 ) => {
-  const res = await axios.patch(
-    `${API}/bookings/${id}/status`,   // ✅ fixed
+  const res = await api.patch(
+    `/bookings/${id}/status`,
     { status },
     {
       headers: {
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     }
   );
 

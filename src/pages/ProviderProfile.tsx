@@ -6,6 +6,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { fetchProviderById } from "../services/providerService";
 import { createBooking } from "../services/bookingService";
 import styles from "./ProviderProfile.module.css";
+import api from "../api/axios";
 
 /* ── SVG icons ── */
 const IconChat = () => (
@@ -80,11 +81,12 @@ function ProviderProfile() {
       }
     };
     loadProvider();
-    fetch(`http://localhost:5000/reviews/provider/${id}`)
-      .then(r => r.json())
-      .then(setReviews)
-      .catch(err => console.error("Failed to load reviews", err));
-  }, [id]);
+
+api.get(`/reviews/provider/${id}`)
+  .then(res => setReviews(res.data))
+  .catch(err => console.error("Failed to load reviews", err));
+
+}, [id]);
 
   const formatPrice = () => {
     if (!provider?.priceAmount) return "Price not specified";

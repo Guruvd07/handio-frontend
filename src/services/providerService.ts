@@ -1,6 +1,4 @@
-import axios from "axios";
-
-const API = "http://localhost:5000";
+import api from "../api/axios";
 
 export const fetchProviders = async (filters: {
   category: string;
@@ -8,7 +6,7 @@ export const fetchProviders = async (filters: {
   area: string;
 }) => {
 
-  const res = await axios.get(`${API}/providers`, {
+  const res = await api.get("/providers", {
     params: filters,
   });
 
@@ -21,7 +19,7 @@ export const fetchProviderById = async (id: string) => {
     throw new Error("Invalid provider id");
   }
 
-  const res = await axios.get(`${API}/providers/${id}`);
+  const res = await api.get(`/providers/${id}`);
 
   return res.data;
 };

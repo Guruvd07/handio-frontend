@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api/axios";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import styles from "./SearchProviders.module.css";
@@ -28,7 +28,7 @@ function SearchProviders() {
 
   const loadFilters = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/providers/filters/options");
+      const res = await api.get("/providers/filters/options");
       setFilters(res.data);
     } catch (err) {
       console.error("Failed to load filters", err);
@@ -39,9 +39,11 @@ function SearchProviders() {
     try {
       setLoading(true);
       setSearchPerformed(true);
-      const res = await axios.get("http://localhost:5000/providers", {
+  
+      const res = await api.get("/providers", {
         params: { category, city, area }
       });
+  
       setResults(res.data);
     } catch (err) {
       console.error("Search failed", err);

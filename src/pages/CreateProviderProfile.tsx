@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {
   SERVICE_CATEGORIES,
@@ -9,6 +8,7 @@ import {
   COMMON_AREAS
 } from "../constants/providerOptions";
 import "./CreateProviderProfile.css";
+import api from "../api/axios";
 
 interface FormData {
   category: string;
@@ -113,8 +113,8 @@ function CreateProviderProfile() {
 
     setLoading(true);
     try {
-      await axios.post(
-        "http://localhost:5000/providers/profile",
+      await api.post(
+        "/providers/profile",
         {
           ...form,
           priceAmount: Number(form.priceAmount)

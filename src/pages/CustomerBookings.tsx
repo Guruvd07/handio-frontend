@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api/axios";
 // import { useLanguage } from "../context/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import styles from "./CustomerBookings.module.css";
@@ -36,9 +36,10 @@ export default function CustomerBookings() {
   async function load() {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/bookings/my", {
+      const res = await api.get("/bookings/my", {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       });
+  
       setList(Array.isArray(res.data) ? res.data : res.data?.bookings || []);
     } catch (err) {
       console.error("Error loading bookings:", err);
