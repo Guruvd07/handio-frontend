@@ -9,6 +9,28 @@ import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import api from "../api/axios";
 import styles from "./ProviderDashboard.module.css";
+import {
+  BarChart3,
+  Clock,
+  CheckCircle,
+  XCircle,
+  CheckCircle2,
+  User,
+  ImagePlus,
+  MessageSquare,
+  Plus,
+  Calendar,
+  MapPin,
+  DollarSign,
+  FileText,
+  Check,
+  X,
+  Inbox,
+  Sparkles,
+  TrendingUp,
+  Star,
+  ClipboardList
+} from "lucide-react";
 
 function ProviderDashboard() {
   const { t } = useLanguage();
@@ -149,12 +171,13 @@ function ProviderDashboard() {
   };
 
   const getStatusIcon = (status: string) => {
+    const iconProps = { size: 16, strokeWidth: 2.5 };
     switch(status) {
-      case 'pending': return '⏳';
-      case 'accepted': return '✓';
-      case 'rejected': return '✕';
-      case 'completed': return '✅';
-      default: return '•';
+      case 'pending': return <Clock {...iconProps} />;
+      case 'accepted': return <CheckCircle {...iconProps} />;
+      case 'rejected': return <XCircle {...iconProps} />;
+      case 'completed': return <CheckCircle2 {...iconProps} />;
+      default: return <CheckCircle {...iconProps} />;
     }
   };
 
@@ -168,7 +191,10 @@ function ProviderDashboard() {
         {/* ── Header ── */}
         <div className={styles["dashboard-header"]}>
           <div className={styles["header-content"]}> <br /><br />
-            <span className={styles["header-badge"]}>⚡ Provider Dashboard</span>
+            <span className={styles["header-badge"]}>
+              <Sparkles size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />
+              Provider Dashboard
+            </span>
             <h1 className={styles["header-title"]}>
               Welcome back, <span className={styles["title-gradient"]}>{firstName}!</span>
             </h1>
@@ -192,9 +218,9 @@ function ProviderDashboard() {
                       <button
                         className={styles["photo-edit-btn"]}
                         onClick={() => document.getElementById('file-input')?.click()}
-                      >✎ Edit</button>
+                      ><ImagePlus size={14} style={{ display: 'inline-block', marginRight: '4px' }} /> Edit</button>
                       <button className={styles["photo-delete-btn"]} onClick={deletePhoto}>
-                        ✕ Remove
+                        <X size={14} style={{ display: 'inline-block', marginRight: '4px' }} /> Remove
                       </button>
                     </div>
                   </div>
@@ -203,7 +229,7 @@ function ProviderDashboard() {
                     className={styles["profile-placeholder"]}
                     onClick={() => document.getElementById('file-input')?.click()}
                   >
-                    <span className={styles["placeholder-icon"]}>👤</span>
+                    <User size={32} style={{ opacity: 0.5, marginBottom: '8px' }} />
                     <span className={styles["placeholder-text"]}>Upload Photo</span>
                   </div>
                 )}
@@ -219,11 +245,11 @@ function ProviderDashboard() {
                 <h3 className={styles["profile-name"]}>{providerName}</h3>
                 {profileExists ? (
                   <div className={`${styles["profile-badge"]} ${styles["verified"]}`}>
-                    <span>✓</span> Verified Professional
+                    <CheckCircle size={12} style={{ display: 'inline-block', marginRight: '3px' }} /> Verified Professional
                   </div>
                 ) : (
                   <div className={`${styles["profile-badge"]} ${styles["incomplete"]}`}>
-                    <span>⏳</span> Profile Incomplete
+                    <Clock size={12} style={{ display: 'inline-block', marginRight: '3px' }} /> Profile Incomplete
                   </div>
                 )}
               </div>
@@ -249,13 +275,13 @@ function ProviderDashboard() {
                   </div>
                   <div className={styles["profile-actions"]}>
                     <button className={styles["profile-action-btn"]} onClick={() => navigate("/upload-portfolio")}>
-                      📸 Portfolio
+                      <ImagePlus size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> Portfolio
                     </button>
                     <button
                       className={styles["profile-action-btn"]}
                       onClick={() => navigate("/messages")}
                     >
-                      💬 Messages
+                      <MessageSquare size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> Messages
                     </button>
                   </div>
                 </>
@@ -264,7 +290,7 @@ function ProviderDashboard() {
                   <h4>Complete Your Profile</h4>
                   <p>Create your provider profile to start accepting bookings from customers.</p>
                   <button className={styles["create-profile-btn"]} onClick={() => navigate("/create-provider-profile")}>
-                    ➕ Create Profile
+                    <Plus size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> Create Profile
                   </button>
                 </div>
               )}
@@ -276,10 +302,10 @@ function ProviderDashboard() {
         {profileExists && (
           <div className={styles["stats-grid"]}>
             {[
-              { key: "total",     icon: "📊", label: "Total",     val: stats.total },
-              { key: "pending",   icon: "⏳", label: "Pending",   val: stats.pending },
-              { key: "accepted",  icon: "✓",  label: "Accepted",  val: stats.accepted },
-              { key: "completed", icon: "✅", label: "Completed", val: stats.completed },
+              { key: "total",     icon: <BarChart3 size={22} />, label: "Total",     val: stats.total },
+              { key: "pending",   icon: <Clock size={22} />, label: "Pending",   val: stats.pending },
+              { key: "accepted",  icon: <CheckCircle size={22} />,  label: "Accepted",  val: stats.accepted },
+              { key: "completed", icon: <CheckCircle2 size={22} />, label: "Completed", val: stats.completed },
             ].map(s => (
               <div key={s.key} className={`${styles["stat-card"]} ${styles[s.key]}`}>
                 <span className={styles["stat-icon"]}>{s.icon}</span>
@@ -296,9 +322,9 @@ function ProviderDashboard() {
         {profileExists && (
           <div className={styles["dashboard-tabs"]}>
             {[
-              { key: "bookings", label: "📋 Bookings" },
-              { key: "earnings", label: "💰 Earnings" },
-              { key: "reviews",  label: "⭐ Reviews"  },
+              { key: "bookings", label: <><ClipboardList size={14} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: '-2px' }} /> Bookings</> },
+              { key: "earnings", label: <><DollarSign size={14} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: '-2px' }} /> Earnings</> },
+              { key: "reviews",  label: <><Star size={14} style={{ display: 'inline-block', marginRight: '6px', verticalAlign: '-2px' }} /> Reviews</> },
             ].map(tab => (
               <button
                 key={tab.key}
@@ -316,7 +342,7 @@ function ProviderDashboard() {
 
           {!profileExists ? (
             <div className={styles["welcome-card"]}>
-              <div className={styles["welcome-emoji"]}>🎉</div>
+              <Sparkles size={40} style={{ margin: '0 auto 12px', display: 'block' }} />
               <h2>Welcome to Provider Dashboard!</h2>
               <p>Get started by creating your professional profile to receive booking requests.</p>
               <div className={styles["welcome-steps"]}>
@@ -339,16 +365,17 @@ function ProviderDashboard() {
                 <>
                   <div className={styles["filter-row"]}>
                     {[
-                      { key: "all",       label: "All",          count: stats.total },
-                      { key: "pending",   label: "⏳ Pending",   count: stats.pending },
-                      { key: "accepted",  label: "✓ Accepted",   count: stats.accepted },
-                      { key: "completed", label: "✅ Completed", count: stats.completed },
+                      { key: "all",       label: "All",          count: stats.total, icon: <BarChart3 size={12} /> },
+                      { key: "pending",   label: "Pending",   count: stats.pending, icon: <Clock size={12} /> },
+                      { key: "accepted",  label: "Accepted",   count: stats.accepted, icon: <CheckCircle size={12} /> },
+                      { key: "completed", label: "Completed", count: stats.completed, icon: <CheckCircle2 size={12} /> },
                     ].map(f => (
                       <button
                         key={f.key}
                         className={`${styles["filter-pill"]} ${filter === f.key ? styles["active"] : ""}`}
                         onClick={() => setFilter(f.key)}
                       >
+                        {f.icon}
                         {f.label}
                         <span className={styles["pill-count"]}>{f.count}</span>
                       </button>
@@ -362,7 +389,7 @@ function ProviderDashboard() {
                     </div>
                   ) : filteredBookings.length === 0 ? (
                     <div className={styles["empty-state"]}>
-                      <span className={styles["empty-icon"]}>📭</span>
+                      <Inbox size={48} style={{ margin: '0 auto 10px', opacity: 0.5 }} />
                       <h3>No bookings found</h3>
                       <p>You have no {filter !== 'all' ? filter : ''} bookings right now.</p>
                     </div>
@@ -389,7 +416,7 @@ function ProviderDashboard() {
 
                             <div className={styles["card-body"]}>
                               <div className={styles["detail-row"]}>
-                                <span className={styles["d-icon"]}>📅</span>
+                                <Calendar size={15} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                                 <div>
                                   <span className={styles["d-label"]}>Date</span>
                                   <span className={styles["d-value"]}>
@@ -401,7 +428,7 @@ function ProviderDashboard() {
                               </div>
 
                               <div className={styles["detail-row"]}>
-                                <span className={styles["d-icon"]}>📍</span>
+                                <MapPin size={15} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                                 <div>
                                   <span className={styles["d-label"]}>Location</span>
                                   <span className={styles["d-value"]}>{b.location || 'Not specified'}</span>
@@ -409,7 +436,7 @@ function ProviderDashboard() {
                               </div>
 
                               <div className={`${styles["detail-row"]} ${styles["price-row"]}`}>
-                                <span className={styles["d-icon"]}>💰</span>
+                                <DollarSign size={15} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                                 <div>
                                   <span className={styles["d-label"]}>Service Charge</span>
                                   <span className={styles["price-highlight"]}>
@@ -420,7 +447,7 @@ function ProviderDashboard() {
 
                               {b.note && (
                                 <div className={`${styles["detail-row"]} ${styles["note-row"]}`}>
-                                  <span className={styles["d-icon"]}>📝</span>
+                                  <FileText size={15} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                                   <div>
                                     <span className={styles["d-label"]}>Notes</span>
                                     <span className={styles["d-value"]}>{b.note}</span>
@@ -436,18 +463,18 @@ function ProviderDashboard() {
                                     <button
                                       className={`${styles["act-btn"]} ${styles["accept"]}`}
                                       onClick={() => update(b._id, "accepted")}
-                                    >✓ Accept</button>
+                                    ><Check size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> Accept</button>
                                     <button
                                       className={`${styles["act-btn"]} ${styles["reject"]}`}
                                       onClick={() => update(b._id, "rejected")}
-                                    >✕ Decline</button>
+                                    ><X size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> Decline</button>
                                   </>
                                 )}
                                 {b.status === "accepted" && (
                                   <button
                                     className={`${styles["act-btn"]} ${styles["complete"]}`}
                                     onClick={() => update(b._id, "completed")}
-                                  >✅ Mark Completed</button>
+                                  ><CheckCircle2 size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> Mark Completed</button>
                                 )}
                               </div>
                             )}

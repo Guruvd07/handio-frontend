@@ -6,6 +6,20 @@ import { useLanguage } from "../context/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import styles from "./CustomerBookings.module.css";
 import ReviewForm from "../components/ReviewForm";
+import {
+  BarChart3,
+  Clock,
+  CheckCircle2,
+  MapPin,
+  Calendar,
+  DollarSign,
+  FileText,
+  User,
+  MessageCircle,
+  Star,
+  Inbox,
+  ChevronRight
+} from "lucide-react";
 
 export default function CustomerBookings() {
   const { t } = useLanguage();
@@ -58,11 +72,11 @@ export default function CustomerBookings() {
     return { amount: `₹${provider.priceAmount.toLocaleString()}`, type: type ? `/ ${type.toLowerCase()}` : "" };
   };
 
-  const STATUS_CONFIG: Record<string, { icon: string; label: string; cls: string }> = {
-    pending:   { icon: "⏳", label: "Pending",   cls: "s-pending"   },
-    accepted:  { icon: "✓",  label: "Confirmed", cls: "s-accepted"  },
-    rejected:  { icon: "✕",  label: "Rejected",  cls: "s-rejected"  },
-    completed: { icon: "✅", label: "Completed", cls: "s-completed" },
+  const STATUS_CONFIG: Record<string, { icon: React.ReactNode; label: string; cls: string }> = {
+    pending:   { icon: <Clock size={13} style={{ display: 'inline-block' }} />, label: "Pending",   cls: "s-pending"   },
+    accepted:  { icon: <CheckCircle2 size={13} style={{ display: 'inline-block' }} />,  label: "Confirmed", cls: "s-accepted"  },
+    rejected:  { icon: <span style={{ fontSize: '13px', display: 'inline-block' }}>✕</span>,  label: "Rejected",  cls: "s-rejected"  },
+    completed: { icon: <CheckCircle2 size={13} style={{ display: 'inline-block' }} />, label: "Completed", cls: "s-completed" },
   };
 
   const filteredList = filter === "all" ? list : list.filter(b => b.status === filter);
@@ -107,10 +121,10 @@ export default function CustomerBookings() {
         {/* Stats */}
         <div className={styles["stats-grid"]}>
           {[
-            { key:"total",     icon:"📊", label:"Total",     val:stats.total     },
-            { key:"pending",   icon:"⏳", label:"Pending",   val:stats.pending   },
-            { key:"accepted",  icon:"✓",  label:"Confirmed", val:stats.accepted  },
-            { key:"completed", icon:"✅", label:"Completed", val:stats.completed },
+            { key:"total",     icon: <BarChart3 size={20} />, label:"Total",     val:stats.total     },
+            { key:"pending",   icon: <Clock size={20} />, label:"Pending",   val:stats.pending   },
+            { key:"accepted",  icon: <CheckCircle2 size={20} />,  label:"Confirmed", val:stats.accepted  },
+            { key:"completed", icon: <CheckCircle2 size={20} />, label:"Completed", val:stats.completed },
           ].map(s => (
             <div key={s.key} className={`${styles["stat-card"]} ${styles[s.key]}`}>
               <div className={styles["stat-icon"]}>{s.icon}</div>
@@ -126,16 +140,17 @@ export default function CustomerBookings() {
         <div className={styles["filter-section"]}>
           <div className={styles["filter-tabs"]}>
             {[
-              { key:"all",       label:"All",         count:list.length    },
-              { key:"pending",   label:"⏳ Pending",  count:stats.pending  },
-              { key:"accepted",  label:"✓ Confirmed", count:stats.accepted },
-              { key:"completed", label:"✅ Done",     count:stats.completed},
+              { key:"all",       label:"All",         count:list.length, icon: <BarChart3 size={12} /> },
+              { key:"pending",   label:"Pending",  count:stats.pending, icon: <Clock size={12} /> },
+              { key:"accepted",  label:"Confirmed", count:stats.accepted, icon: <CheckCircle2 size={12} /> },
+              { key:"completed", label:"Done",     count:stats.completed, icon: <CheckCircle2 size={12} />},
             ].map(f => (
               <button
                 key={f.key}
                 className={`${styles["filter-tab"]} ${filter === f.key ? styles["active"] : ""}`}
                 onClick={() => setFilter(f.key)}
               >
+                {f.icon}
                 {f.label}
                 {filter === f.key && <span className={styles["tab-count"]}>{f.count}</span>}
               </button>
@@ -146,11 +161,11 @@ export default function CustomerBookings() {
         {/* Empty */}
         {filteredList.length === 0 ? (
           <div className={styles["empty-state"]}>
-            <div className={styles["empty-state-icon"]}>📭</div>
+            <Inbox size={48} style={{ opacity: 0.4, marginBottom: '8px' }} />
             <h3>No bookings found</h3>
             <p>You don't have any {filter !== "all" ? filter : ""} bookings yet.</p>
             <button className={styles["browse-services-btn"]} onClick={() => navigate("/search")}>
-              Browse Services <span className={styles["btn-arrow"]}>→</span>
+              Browse Services <ChevronRight size={14} style={{ display: 'inline-block' }} />
             </button>
           </div>
         ) : (
@@ -198,7 +213,7 @@ export default function CustomerBookings() {
                   <div className={styles["booking-card-body"]}>
 
                     <div className={styles["detail-item"]}>
-                      <span className={styles["detail-icon"]}>📍</span>
+                      <MapPin size={14} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                       <div className={styles["detail-content"]}>
                         <span className={styles["detail-label"]}>Location</span>
                         <span className={styles["detail-value"]}>
@@ -208,7 +223,7 @@ export default function CustomerBookings() {
                     </div>
 
                     <div className={styles["detail-item"]}>
-                      <span className={styles["detail-icon"]}>📅</span>
+                      <Calendar size={14} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                       <div className={styles["detail-content"]}>
                         <span className={styles["detail-label"]}>Date</span>
                         <span className={styles["detail-value"]}>{formatDate(b.date)}</span>
@@ -218,7 +233,7 @@ export default function CustomerBookings() {
                     {/* Price row */}
                     {price && (
                       <div className={styles["detail-item"]}>
-                        <span className={styles["detail-icon"]}>💰</span>
+                        <DollarSign size={14} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                         <div className={styles["detail-content"]}>
                           <span className={styles["detail-label"]}>Service Charge</span>
                           <span className={styles["price-inline"]}>
@@ -231,7 +246,7 @@ export default function CustomerBookings() {
 
                     {b.note && (
                       <div className={`${styles["detail-item"]} ${styles["note-item"]}`}>
-                        <span className={styles["detail-icon"]}>📝</span>
+                        <FileText size={14} style={{ marginTop: '2px', flexShrink: 0, width: '18px', textAlign: 'center' }} />
                         <div className={styles["detail-content"]}>
                           <span className={styles["detail-label"]}>Note</span>
                           <span className={`${styles["detail-value"]} ${styles["note-text"]}`}>
@@ -250,14 +265,14 @@ export default function CustomerBookings() {
                         className={`${styles["action-btn"]} ${styles["profile-btn"]}`}
                         onClick={() => goToProfile(b.providerId?._id)}
                       >
-                        👤 Profile
+                        <User size={13} style={{ display: 'inline-block' }} /> Profile
                       </button>
 
                       <button
                         className={`${styles["action-btn"]} ${styles["contact-btn"]}`}
                         onClick={() => goToChat(b.providerId)}
                       >
-                        💬 Chat
+                        <MessageCircle size={13} style={{ display: 'inline-block' }} /> Chat
                       </button>
 
                       {b.status === "completed" && !b.reviewed && (
@@ -265,12 +280,14 @@ export default function CustomerBookings() {
                           className={`${styles["action-btn"]} ${styles["review-btn"]}`}
                           onClick={() => { setSelectedBooking(b); setShowReviewModal(true); }}
                         >
-                          ⭐ Review
+                          <Star size={13} style={{ display: 'inline-block' }} /> Review
                         </button>
                       )}
 
                       {b.reviewed && (
-                        <span className={styles["reviewed-badge"]}>⭐ Reviewed</span>
+                        <span className={styles["reviewed-badge"]}>
+                          <Star size={12} style={{ display: 'inline-block' }} /> Reviewed
+                        </span>
                       )}
                     </div>
                   </div>

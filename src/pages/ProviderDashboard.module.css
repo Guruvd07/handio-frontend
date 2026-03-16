@@ -213,7 +213,7 @@
   border-color: #6366f1;
 }
 
-.placeholder-icon { font-size: 32px; opacity: 0.5; }
+.placeholder-icon { font-size: 32px; opacity: 0.5; display: flex; justify-content: center; }
 .placeholder-text { font-size: 11px; color: #64748b; font-weight: 600; }
 
 .profile-info {
@@ -467,7 +467,7 @@
 .filter-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   padding: 8px 14px;
   background: #151f32;
   border: 1px solid #1e2d47;

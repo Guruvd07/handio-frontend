@@ -3,6 +3,21 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../api/axios";
+import {
+  Search,
+  ClipboardList,
+  MessageSquare,
+  Star,
+  BarChart3,
+  Clock,
+  CheckCircle2,
+  MessageCircle,
+  Inbox,
+  ChevronRight,
+  Sparkles,
+  User,
+  Check
+} from "lucide-react";
 
 const CSS = `
   .cd-page {
@@ -394,10 +409,10 @@ function CustomerDashboard() {
   const recentBookings = bookings.slice(0, 5);
 
   const quickLinks = [
-    { icon: "🔍", label: "Find Providers",  sub: "Search & book services",   to: "/search"    },
-    { icon: "📋", label: "My Bookings",     sub: "View all your bookings",   to: "/bookings"  },
-    { icon: "💬", label: "Messages",        sub: "Chat with providers",      to: "/messages"  },
-    { icon: "⭐", label: "Reviews",         sub: "Rate your experiences",    to: "/bookings"  },
+    { icon: <Search size={20} />, label: "Find Providers",  sub: "Search & book services",   to: "/search"    },
+    { icon: <ClipboardList size={20} />, label: "My Bookings",     sub: "View all your bookings",   to: "/bookings"  },
+    { icon: <MessageSquare size={20} />, label: "Messages",        sub: "Chat with providers",      to: "/messages"  },
+    { icon: <Star size={20} />, label: "Reviews",         sub: "Rate your experiences",    to: "/bookings"  },
   ];
 
   const formatDate = (d: string) =>
@@ -412,7 +427,10 @@ function CustomerDashboard() {
 
           {/* ── Header ── */}
           <div className="cd-header">
-            <span className="cd-badge">👤 Customer Dashboard</span>
+            <span className="cd-badge">
+              <User size={12} style={{ display: 'inline-block', marginRight: '5px', verticalAlign: 'middle' }} />
+              Customer Dashboard
+            </span>
             <h1 className="cd-welcome">
               Welcome back, <span className="cd-welcome-accent">{firstName}!</span>
             </h1>
@@ -425,14 +443,16 @@ function CustomerDashboard() {
             <div className="cd-profile-info">
               <div className="cd-profile-name">{name}</div>
               {email && <div className="cd-profile-email">{email}</div>}
-              <div className="cd-profile-tag">✓ Verified Customer</div>
+              <div className="cd-profile-tag">
+                <Check size={11} style={{ display: 'inline-block' }} /> Verified Customer
+              </div>
             </div>
             <div className="cd-quick-actions">
               <Link to="/search" className="cd-quick-btn cd-quick-btn-primary">
-                🔍 Find Services
+                <Search size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> Find Services
               </Link>
               <Link to="/bookings" className="cd-quick-btn cd-quick-btn-outline">
-                📋 My Bookings
+                <ClipboardList size={14} style={{ display: 'inline-block', marginRight: '5px' }} /> My Bookings
               </Link>
             </div>
           </div>
@@ -440,10 +460,10 @@ function CustomerDashboard() {
           {/* ── Stats ── */}
           <div className="cd-stats">
             {[
-              { cls: "cd-stat-total",   icon: "📊", val: stats.total,   lbl: "Total Bookings"    },
-              { cls: "cd-stat-pending", icon: "⏳", val: stats.pending, lbl: "Pending"            },
-              { cls: "cd-stat-done",    icon: "✅", val: stats.done,    lbl: "Completed"          },
-              { cls: "cd-stat-saved",   icon: "💬", val: "—",           lbl: "Messages",
+              { cls: "cd-stat-total",   icon: <BarChart3 size={20} />, val: stats.total,   lbl: "Total Bookings"    },
+              { cls: "cd-stat-pending", icon: <Clock size={20} />, val: stats.pending, lbl: "Pending"            },
+              { cls: "cd-stat-done",    icon: <CheckCircle2 size={20} />, val: stats.done,    lbl: "Completed"          },
+              { cls: "cd-stat-saved",   icon: <MessageCircle size={20} />, val: "—",           lbl: "Messages",
                 onClick: () => navigate("/messages") },
             ].map((s, i) => (
               <div
@@ -462,11 +482,13 @@ function CustomerDashboard() {
           </div>
 
           {/* ── Quick links ── */}
-          <div className="cd-section-title">⚡ Quick Access</div>
+          <div className="cd-section-title">
+            <Sparkles size={16} style={{ display: 'inline-block', marginRight: '6px' }} /> Quick Access
+          </div>
           <div className="cd-links">
             {quickLinks.map((l, i) => (
               <Link key={i} to={l.to} className="cd-link-card">
-                <div className="cd-link-icon">{l.icon}</div>
+                <div className="cd-link-icon" style={{ fontSize: '20px' }}>{l.icon}</div>
                 <div className="cd-link-label">{l.label}</div>
                 <div className="cd-link-sub">{l.sub}</div>
               </Link>
@@ -474,13 +496,15 @@ function CustomerDashboard() {
           </div>
 
           {/* ── Recent bookings ── */}
-          <div className="cd-section-title">🕐 Recent Bookings</div>
+          <div className="cd-section-title">
+            <Clock size={16} style={{ display: 'inline-block', marginRight: '6px' }} /> Recent Bookings
+          </div>
 
           {loading ? (
             <div className="cd-spinner" />
           ) : recentBookings.length === 0 ? (
             <div className="cd-empty">
-              <span className="cd-empty-icon">📭</span>
+              <Inbox size={36} style={{ opacity: 0.4, display: 'block', margin: '0 auto 8px' }} />
               No bookings yet — find a service provider to get started!
             </div>
           ) : (
@@ -507,7 +531,7 @@ function CustomerDashboard() {
 
           {bookings.length > 5 && (
             <Link to="/bookings" className="cd-view-all">
-              View all {bookings.length} bookings →
+              View all {bookings.length} bookings <ChevronRight size={13} style={{ display: 'inline-block', marginLeft: '3px', verticalAlign: '-1px' }} />
             </Link>
           )}
 

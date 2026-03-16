@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import styles from "./UploadPortfolio.module.css";
+import {
+  ImagePlus,
+  AlertTriangle,
+  CheckCircle,
+  Upload,
+  Trash2,
+  ImageOff
+} from "lucide-react";
 
 function UploadPortfolio() {
   const navigate = useNavigate();
@@ -119,7 +127,7 @@ function UploadPortfolio() {
               className={styles.upFileInput}
             />
             <label htmlFor="up-file-input" className={styles.upFileLabel}>
-              <span className={styles.upDropIcon}>📸</span>
+              <ImagePlus size={40} style={{ opacity: 0.6 }} />
               <p className={styles.upDropText}>Click to upload or drag & drop</p>
               <p className={styles.upDropHint}>PNG, JPG, GIF · max 5 MB</p>
             </label>
@@ -135,14 +143,16 @@ function UploadPortfolio() {
                   onClick={clearUpload}
                   type="button"
                   title="Remove"
-                >✕</button>
+                >
+                  <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</span>
+                </button>
               </div>
             </div>
           )}
 
           {/* Alerts */}
-          {error   && <div className={`${styles.upAlert} ${styles.upAlertError}`}>⚠ {error}</div>}
-          {success && <div className={`${styles.upAlert} ${styles.upAlertSuccess}`}>✓ {success}</div>}
+          {error   && <div className={`${styles.upAlert} ${styles.upAlertError}`}><AlertTriangle size={14} style={{ flexShrink: 0 }} /> {error}</div>}
+          {success && <div className={`${styles.upAlert} ${styles.upAlertSuccess}`}><CheckCircle size={14} style={{ flexShrink: 0 }} /> {success}</div>}
 
           {/* Caption */}
           <div className={styles.upCaptionGroup}>
@@ -172,7 +182,11 @@ function UploadPortfolio() {
                 <span className={styles.upBtnLoading}>
                   <span className={styles.upBtnSpinner} /> Uploading…
                 </span>
-              ) : "⬆ Upload Image"}
+              ) : (
+                <>
+                  <Upload size={15} /> Upload Image
+                </>
+              )}
             </button>
             {file && (
               <button
@@ -195,7 +209,7 @@ function UploadPortfolio() {
 
           {portfolio.length === 0 ? (
             <div className={styles.upEmpty}>
-              <span className={styles.upEmptyIcon}>🖼️</span>
+              <ImageOff size={48} style={{ opacity: 0.4, marginBottom: '4px' }} />
               <h3>No portfolio images yet</h3>
               <p>Upload your first image to showcase your work</p>
             </div>
@@ -223,7 +237,7 @@ function UploadPortfolio() {
                     onClick={() => handleDelete(item._id)}
                     title="Delete this image"
                   >
-                    🗑 Delete
+                    <Trash2 size={13} style={{ display: 'inline-block', marginRight: '4px' }} /> Delete
                   </button>
 
                 </div>
@@ -238,3 +252,4 @@ function UploadPortfolio() {
 }
 
 export default UploadPortfolio;
+  
