@@ -6,17 +6,16 @@ interface Props {
 }
 
 function ProtectedRoute({ children, role }: Props) {
-
   const token = localStorage.getItem("token");
   const userRole = localStorage.getItem("role");
 
-  // If user is not logged in
+  // 🔒 Not logged in
   if (!token) {
     return <Navigate to="/login" replace />;
   }
 
-  // If role is required and does not match
-  if (role && userRole !== role) {
+  // 🔒 Role mismatch
+  if (role && (!userRole || userRole !== role)) {
     return <Navigate to="/login" replace />;
   }
 
