@@ -180,7 +180,7 @@ const CSS = `
   .cd-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 10px;                              /* ← reduced gap on mobile */
     margin-bottom: 28px;
   }
 
@@ -188,13 +188,14 @@ const CSS = `
     background: #151f32;
     border: 1px solid #1e2d47;
     border-radius: 16px;
-    padding: 20px;
+    padding: 14px;                          /* ← reduced from 20px */
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;                              /* ← reduced from 14px */
     transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 0;                           /* ← allows grid children to shrink */
+    overflow: hidden;                       /* ← prevents bleed out */
   }
-
   .cd-stat:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
 
   .cd-stat-icon {
@@ -357,10 +358,19 @@ const CSS = `
     .cd-welcome { font-size: 44px; }
   }
 
-  @media (max-width: 480px) {
-    .cd-welcome     { font-size: 28px; }
-    .cd-avatar-big  { width: 56px; height: 56px; font-size: 22px; }
+ @media (max-width: 480px) {
+    .cd-welcome      { font-size: 28px; }
+    .cd-avatar-big   { width: 56px; height: 56px; font-size: 22px; }
     .cd-profile-name { font-size: 17px; }
+
+    .cd-stats        { gap: 8px; }
+    .cd-stat         { padding: 12px 10px; gap: 8px; }
+    .cd-stat-icon    { width: 38px; height: 38px; flex-shrink: 0; }
+    .cd-stat-val     { font-size: 22px; }
+    .cd-stat-lbl     { font-size: 10px; }
+
+    .cd-links        { gap: 8px; }
+    .cd-link-card    { padding: 14px; }
   }
 
   @media (prefers-reduced-motion: reduce) {

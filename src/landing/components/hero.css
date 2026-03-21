@@ -74,7 +74,7 @@
 }
 
 .hero-content {
-  padding-top: 2rem;
+  padding-top: 2rem;        /* ← was 2rem — accounts for ~72px fixed navbar */
   padding-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr;
@@ -85,7 +85,7 @@
 /* Mobile first spacing */
 @media (max-width: 480px) {
   .hero-content {
-    padding-top: 1.5rem;
+    padding-top: 5.5rem;    /* ← was 1.5rem — navbar is ~64px on mobile */
     padding-bottom: 1.5rem;
     gap: 1.5rem;
   }
